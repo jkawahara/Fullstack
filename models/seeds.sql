@@ -1,4 +1,4 @@
-USE pawstagram_db;
+USE fullstack_db;
 
 INSERT INTO Communities (name, posts, bio, location, photoUrl)
 VALUES ("comm1", "comm1post", "comm1bio", "comm1location", "https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/Cesars-dog-park-tips.jpg?itok=hkJ79Dog"), ("comm2", "comm2post", "comm2bio", "comm2location", "https://www.tripsavvy.com/thmb/Kq9SBqeJ6RPQvkyo3WTBnMtMv3I=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/IMG_9157-1000x1500-56a387c93df78cf7727ddf1b.jpg"), ("comm3", "comm3post", "comm3bio", "comm3location", "https://cairngorms.co.uk/wp-content/uploads/2017/07/A-father-and-son-cycling-a-country-path-Ballater.-The-Cairngorms-National-Park1.jpg");
