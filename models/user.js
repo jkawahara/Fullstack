@@ -33,16 +33,16 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    communities: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
     bio: {
       type: DataTypes.TEXT,
       allowNull: true
     },
     location: {
       type: DataTypes.STRING,
+      allownull: true
+    },
+    score: {
+      type: DataTypes.INTEGER,
       allownull: true
     },
     createdAt: {
@@ -56,15 +56,12 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   User.associate = function(models) {
-    User.belongsToMany(models.Community, {
-      through: "UserCommunity",
-      as: "Communities",
-      foreignKey: "userId",
-      otherKey: "communityId"
+    User.belongsTo(models.Lesson, {
+      foreignKey: {
+        allowNull: false
+      }
     });
-    User.hasMany(models.Pet, {
-      onDelete: "cascade"
-    });
+    User.hasMany(models.Lesson);
   };
 
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
