@@ -1,14 +1,43 @@
 var db = require("../models");
 var passport = require("../config/passport");
-const axios = require("axios");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+// const axios = require("axios");
 const router = require("express").Router();
 
 // example from the final class activity
-router.route("/")
-  .get(whateveryouwant)
+// router.route("/")
+//   .get(whateveryouwant)
 
-module.exports = router;
+module.exports = function(app)
+{
+ // If the user has valid login credentials, send them to the members page.
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    res.json("/user");
+  });
 
+  app.get("/user", isAuthenticated, function(req, res) {
+    // res.sendFile(path.join(__dirname, "../public/user-page.html"));
+    res.json(res)
+  });
+
+  app.post("/api/signup", function(req, res) {
+    db.User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password
+    })
+      .then(function(data) {
+        console.log("added to database" + data)
+        res.redirect(307, "/api/login");
+      })
+      .catch(function(err) {
+        console.log(err);
+        res.json(err);
+        // res.status(422).json(err.errors[0].message);
+      });
+  });
+
+}
 //test3
 // all this below is just to refer to from pawstagram routes, incl. many to many 
 
@@ -205,10 +234,7 @@ module.exports = router;
 //     });
 //   });
 
-//   // If the user has valid login credentials, send them to the members page.
-//   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-//     res.json("/user");
-//   });
+
 
 //   // Delete a pet by id
 //   app.delete("/api/pets/:id", function(req, res) {
