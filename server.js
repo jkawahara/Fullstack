@@ -1,5 +1,5 @@
 const express = require("express");
-const routes = require("./routes")
+const routes = require("./routes/api")
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -25,7 +25,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
-require("./routes/apiRoutes")(app);
+require("./routes/api/apiRoutes")(app);
 
 // Send every request to the React app
 // Define any API routes before this runs
