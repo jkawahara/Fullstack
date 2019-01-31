@@ -3,10 +3,12 @@ var passport = require("../config/passport");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 // const axios = require("axios");
 const router = require("express").Router();
+// const lessonController = require("../../controllers/lessonController");
 
 // example from the final class activity
 // router.route("/")
-//   .get(whateveryouwant)
+//   .get(lessonController.findAll)
+  // .get(lessonController.update)
 
 module.exports = function(app)
 {
@@ -41,24 +43,14 @@ module.exports = function(app)
 //test3
 // all this below is just to refer to from pawstagram routes, incl. many to many 
 
-// module.exports = function(app) {
-//   // Get all users
-//   app.get("/api/users", function(req, res) {
-//     db.User.findAll({
-//       include: [
-//         db.Pet,
-//         {
-//           model: db.Community,
-//           as: "Communities",
-//           required: false,
-//           attributes: ["id", "name"],
-//           through: { attributes: [] }
-//         }
-//       ]
-//     }).then(function(dbUser) {
-//       res.json(dbUser);
-//     });
-//   });
+module.exports = function(app) {
+  // Get all users
+  app.get("/lesson", function(req, res) {
+    db.User.findAll().then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+}
 
 //   // Get CURRENT user
 //   app.get("/api/thisuser", function(req, res) {

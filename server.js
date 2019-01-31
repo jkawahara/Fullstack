@@ -1,7 +1,9 @@
 const express = require("express");
+const routes = require("./routes")
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const logger = require("morgan")
 var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
@@ -9,6 +11,7 @@ var passport = require("./config/passport");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 var db = require("./models");
+
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -29,6 +32,7 @@ require("./routes/apiRoutes")(app);
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
