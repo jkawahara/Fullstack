@@ -45,6 +45,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allownull: true
     },
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+      allownull: false,
+      defaultValue: false
+    },
     createdAt: {
       type: DataTypes.DATE,
       defaultValue: sequelize.literal("CURRENT_TIMESTAMP")
