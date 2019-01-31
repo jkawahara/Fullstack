@@ -33,6 +33,11 @@ function NavTabs() {
             <img className="email"  alt="email" />
         </a>
         </li>
+        <li>
+          Google Login
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+        </li>
         </ul>
         <ul className="navbar-nav navbar-right ml-auto">
           <li className="nav-item active">
