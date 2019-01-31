@@ -1,6 +1,6 @@
-var db = require("../../models");
-var passport = require("../../config/passport");
-var isAuthenticated = require("../../config/middleware/isAuthenticated");
+var db = require("../models");
+var passport = require("../config/passport");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 // const axios = require("axios");
 const router = require("express").Router();
 // const lessonController = require("../../controllers/lessonController");
