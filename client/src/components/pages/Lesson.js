@@ -2,6 +2,14 @@ import React from "react";
 import Iframe from "react-iframe"
 import axios from "axios";
 
+// we need to get user's window from url to direct them to right lesson from database
+var url = window.location.pathname;
+var lastTWo = url
+  .split("/") // split to an array
+  .slice(-2) // take the two last elements
+  .join('/') // join back to a string;
+
+console.log(lastTWo);
 // currentLesson will actually always change to whatever embed link we get from database
 let currentLesson = "https://codesandbox.io/embed/olrox0pxv5"
 
@@ -10,9 +18,8 @@ class Lesson extends React.Component {
     lesson: currentLesson
   };
 
-  componentDidMount(){
-    // we need to get id somehow from user clicking on a route beforehand, or use window's url or something
-    // axios.get("/api/lesson/" + id)
+  componentWillMount(){
+    // axios.get("/api/lesson/" + lastTWo) ----- in this case, lastTWo will become ajax/1 or whatever window user is in
     // .then(res => {
     //   console.log(res.data)
     //   this.setState({ lesson: res.data })
@@ -25,8 +32,11 @@ class Lesson extends React.Component {
         <br></br> <br></br> <br></br> <br></br> <br></br>
          <div>
          <Iframe url={this.state.lesson}
-        width="100vh"
+        width="100%"
         height="75vh"
+        border="0"
+        border-radius="4px"
+        overflow="hidden"
         id="myId"
         className="myClassname"
         display="initial"
