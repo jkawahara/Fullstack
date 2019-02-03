@@ -7,7 +7,14 @@ module.exports = function (sequelize, DataTypes) {
         len: [1]
       }
     },
-    lessonContent: {
+    lessonUrl: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        isUrl: true
+      }
+    },
+    lessonInstruction: {
       type: DataTypes.TEXT,
       allowNull: true,
       validate: {
