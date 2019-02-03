@@ -9,7 +9,7 @@ module.exports = {
   },
   findOne: function(req, res) {
     db.Lesson
-      .findOne({ where: { id: req.params.id } })
+      .findOne({ where: { name: "Lesson " + req.params.id } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }

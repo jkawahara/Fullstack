@@ -17,7 +17,7 @@ router.route("/classes")
 router.route("/users")
   .get(usersController.findAll);
 
-router.route("/lesson/ajax/:id")
+router.route("/lesson/react/:id")
   .get(lessonsController.findOne)
 
 module.exports = router;
