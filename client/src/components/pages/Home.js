@@ -10,7 +10,7 @@ function Home() {
     <div style={sectionStyle} >
     <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
     {/* if material bootstrap is installed, you should see the below button as green */}
-    <button className="btn-default">HELLO, I SHOULD BE GREEN</button>
+    <button className="btn-default">Welcome to Fullstack</button>
     </div>
   );
 }
