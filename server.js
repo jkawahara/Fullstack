@@ -1,5 +1,5 @@
 const express = require("express");
-const routes = require("./routes")
+const routes = require("./routes/api")
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -7,6 +7,8 @@ const logger = require("morgan")
 var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
+
+var morgan = require('morgan')
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -25,7 +27,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
-require("./routes/apiRoutes")(app);
+require("./routes/api/apiRoutes")(app);
 
 // Send every request to the React app
 // Define any API routes before this runs

@@ -1,6 +1,6 @@
-var db = require("../models");
-var passport = require("../config/passport");
-var isAuthenticated = require("../config/middleware/isAuthenticated");
+var db = require("../../models");
+var passport = require("../../config/passport");
+var isAuthenticated = require("../../config/middleware/isAuthenticated");
 // const axios = require("axios");
 const router = require("express").Router();
 // const lessonController = require("../../controllers/lessonController");
@@ -38,19 +38,15 @@ module.exports = function(app)
         // res.status(422).json(err.errors[0].message);
       });
   });
-
-}
-//test3
-// all this below is just to refer to from pawstagram routes, incl. many to many 
-
-module.exports = function(app) {
-  // Get all users
+  // Get all users but with /lesson for some reason :P
   app.get("/lesson", function(req, res) {
     db.User.findAll().then(function(dbUser) {
       res.json(dbUser);
     });
   });
 }
+//test3
+// all this below is just to refer to from pawstagram routes, incl. many to many 
 
 //   // Get CURRENT user
 //   app.get("/api/thisuser", function(req, res) {
