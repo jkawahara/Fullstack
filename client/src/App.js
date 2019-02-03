@@ -4,6 +4,8 @@ import NavTabs from "./components/NavTabs";
 import Home from "./components/pages/Home";
 import Lesson from "./components/pages/Lesson"
 import NoMatch from "./components/pages/NoMatch";
+import SignUp from "./components/pages/SignUp";
+
 import "./components/pages/style.css"
 
 function App() {
@@ -13,7 +15,7 @@ function App() {
         <NavTabs />
         <Switch>
         <Route exact path="/" component={Home} />
-        {/* <Route exact path="/signup" component={SignUp} /> */}
+        <Route exact path="/signup" component={SignUp} />
         {/* <Route exact path="/login" component={Login} /> */}
         <Route path="/lessons" component={Lesson} />
         {/* <Route path="/profile" component={Profile} */}

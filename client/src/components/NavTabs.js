@@ -42,7 +42,7 @@ function NavTabs() {
           <div className="nav-item g-signin2" data-onsuccess="onSignIn"></div>
         </li>
         <li className="nav-item active">
-          <Link to="/login" className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}>
+          <Link to="/SignUp" className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}>
             Signup/Login
         </Link>
         </li>
