@@ -6,13 +6,13 @@ module.exports = {
       .findAll(req.query)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  findOne: function(req, res) {
+    db.Lesson
+      .findOne({ where: { id: req.params.id } })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
-  // findById: function(req, res) {
-  //   db.Lesson
-  //     .findById(req.params.id)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
   // create: function(req, res) {
   //   db.Lesson
   //     .create(req.body)
