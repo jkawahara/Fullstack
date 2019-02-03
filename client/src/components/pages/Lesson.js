@@ -24,8 +24,8 @@ class Lesson extends React.Component {
 
     .then(res => {
       console.log("Sent")
-      console.log(res.data.lessonContent)
-      this.setState({ lesson: res.data.lessonContent })
+      console.log(res.data.lessonUrl)
+      this.setState({ lesson: res.data.lessonUrl })
     })
   }
 
