@@ -5,11 +5,11 @@ import axios from "axios";
 // we need to get user's window from url to direct them to right lesson from database
 
 // currentLesson will actually always change to whatever embed link we get from database
-let currentLesson = "https://codesandbox.io/embed/olrox0pxv5"
+// let currentLesson = "https://codesandbox.io/embed/olrox0pxv5"
 
 class Lesson extends React.Component {
   state = {
-    lesson: currentLesson
+    lesson: ""
   };
 
   componentWillMount() {
@@ -24,8 +24,8 @@ class Lesson extends React.Component {
 
     .then(res => {
       console.log("Sent")
-      console.log(res.data)
-      // this.setState({ lesson: res.data })
+      console.log(res.data.lessonContent)
+      this.setState({ lesson: res.data.lessonContent })
     })
   }
 
