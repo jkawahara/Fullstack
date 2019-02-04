@@ -17,53 +17,58 @@
     * [Issues](https://github.com/OrionAbrams/Project-3/issues): Issue tracking for user stories, features and bug report
   * Functionality - refer to [video of application user flow](https://drive.google.com/drive/folders/1wj_yyX_CARBAoKz1-fLkkAp_YyxgihzD?usp=sharing):
     * Wireframe
-      * Home page ![homepage.png](public/assets/readme_links/homepage.png "homepage")
-      * Sign up as a new user... ![signup.png](public/assets/readme_links/signup.png "signup")
-      * Login with email and password to authenticate... ![login.png](public/assets/readme_links/login.png "login")
-      * View authenticated user profile... ![myprofile.png](public/assets/readme_links/myprofile.png "myprofile")
-      * News
-      * Add new community... ![addcommunity.png](public/assets/readme_links/addcommunity.png "addcommunity")
+      * Home page ![homepage.png](client/public/assets/readmelinks/homepage.png "homepage")
+      * Sign up as a new user ![signup.png](client/public/assets/readmelinks/signup.png "signup")
+      * Login ![login.png](client/public/assets/readmelinks/login.png "login")
+      * Lessons page ![lessonspage.png](client/public/assets/readmelinks/lessonspage.png "lessonspage")
+      * Profile page ![profilepage.png](client/public/assets/readmelinks/profilepage.png "profilepage")
+      * Charts ![charts.png](client/public/assets/readmelinks/charts.png "charts")
       * JSON Resources
-        * Communities ![jsoncomms.png](public/assets/readme_links/jsoncomms.png "jsoncomms")
-        * Users ![jsonusers.png](public/assets/readme_links/jsonusers.png "jsonusers")
-        * Pets ![jsonpets.png](public/assets/readme_links/jsonpets.png "jsonpets")
-  * Design Description ![architecture.png](public/assets/readme_links/architecture.png "achitecture")
+        * Classes ![jsonclasses.png](client/public/assets/readmelinks/jsonclasses.png "jsonclasses")
+        * Lessons ![jsonlessons.png](client/public/assets/readmelinks/jsonlessons.png "jsonlessons")
+        * Users ![jsonusers.png](client/public/assets/readmelinks/jsonusers.png "jsonusers")
+  * Design Description ![architecture.png](client/public/assets/readmelinks/architecture.png "achitecture")
     * Application Setup (server.js)
-      * Configure Express web app framework listening on process.env.PORT (Heroku) or default to 3000. Parse URL encoded, any type including nested objects, and JSON and call appropriate routing.
-      * Required modules: npm (dotenv, express, express-handlebars), path
-      * Relevant functions: require(), use(), engine(), set(), sync(), listen()
-      * Export: app
-    * Database Setup (schema.sql, seeds.sql TBD)
-      * Create pawstagram_db database
-      * Available Seed with TBD
+      * Configure Express web app framework listening on process.env.PORT for Heroku deployment or default to 3001 for localhost. Serve up static assets. Configure middleware including Morgan Logger and parse URL encoded (any type including nested objects, JSON). Setup Passport authentication. Setup routes. Sync Sequelize models.
+      * Required modules: npm (express, express-session, morgan), /routes, /models, /config/passport
+      * Relevant functions: require(), use(), sync(), listen()
+      * Export: N/A
+    * Database Setup (schema.sql, seeds.sql)
+      * Create fullstack_db database
+      * Available Seed with classes, lessons and users
     * Configuration Definition (config.json)
       * Define configuration object with nested development, test and production environments
-    * Model Setup (/models, index.js) ![model.png](public/assets/readme_links/model.png "model")
-      * Define Sequelize version of Community, User, Pet, PetPhoto, PhotoPost objects including associations
-      * TBD Configure connection to MySQL configuration
-      * TBD Include connection conditional to enable MySQL with Heroku deployment using JawsDB add-on
-      * Required modules: fs, path, sequelize, config.json
-      * Relevant functions: require(), readdirSync(), filter(), forEach(), import(), join(), keys(), associate(), exports(), define(), belongsToMany(), hasMany(), belongsTo()
-      * Export: db, Community, Pet, PetPhoto, PhotoPost, User
+    * Model Setup (/models, index.js) ![model.png](client/public/assets/readmelinks/model.png "model")
+      * Define Sequelize models for Class, Lesson and User objects including associations
+      * Configure connection to MySQL, including conditional to enable MySQL with Heroku deployment using JawsDB add-on or localhost, using Sequelize models.
+      * Required modules: fs, path, Sequelize, config.json
+      * Relevant functions: require(), readdirSync(), filter(), forEach(), import(), join(), keys(), associate(), exports(), define(), hasMany(), belongsTo()
+      * Export: db, Class, Lesson, User
     * Posts Model Setup (TBD)
       * Define Firebase Realtime version of Posts object
-    * Controller Setup (apiRoutes.js, htmlRoutes.js)
+    * Controller Setup (index.js, apiRoutes.js, /controllers)
       * Assign routing views <-> model <-> DB as HTTP methods <-> CRUD operations <-> SQL
         * POST <-> Create <-> INSERT
         * GET <-> Read <-> SELECT
         * PUT <-> Update <-> UPDATE
         * DELETE <-> Delete <-> DELETE
-      * Required modules: /models, path
-      * Relevant functions: require(), exports(), get(), findAll(), findOne(), post(), create(), put(), update(), delete(), destroy(), sendFile(), render()
-      * Export: router, function(app) {}
-    * Authentication Setup
-      * Use Passport to configure authentication...
-      * Required modules: TBD
-      * Relevant functions: TBD
-      * Export: TBD
-    * View Setup (server-side: /layout/main.handlebars, /layout/partials/*.handlebars, *.handlebars, client-side: home-page, login-page, signup-page)
-      * Render statically HTML pages on the client-side within /public.
-      * Use Handlebars.js as web templating system with HTML pages leveraging main.handlebars layout and various *.handlebars partials.  
+      * Required modules: path, express, apiRoutes.js, passport.js, isAuthenticated.js, /controllers, /models
+      * Relevant functions: require(), use(), sendFile(), exports(), route(), redirect(), get(), findAll(), findById(), findOne(), post(), create(), put(), update(), delete(), destroy(), then(), catch()
+      * Export: router, findAll, findById, findOne, create, update, delete
+    * Authentication Setup (passport.js, isAuthenticated.js)
+      * Use Passport to configure authentication of user login
+      * Required modules: passport, passport-local, /models
+      * Relevant functions: require(), use(), findOne(), then(), serializeUser()
+      * Export: passport
+    * View Setup (/client, /public, /src/index, App.js)
+      * Configure React library for single page application leveraging the following reusable components:
+        * /components/NavTabs
+        * /pages
+          * Home
+          * Lesson
+          * Login
+          * Profile
+          * SignUp
   * Prerequisites for Development:
     * MacBook Air (Intel Core i7, 2.2 GHz, 1 Processor, 2 Cores, 8GB)
     * 64 bit operating system 
@@ -79,12 +84,26 @@
     * Server-side:
       * [Node.js](https://nodejs.org/docs/latest/api/documentation.html)
         * [npm](https://www.npmjs.com/)
-          * [dotenv](https://www.npmjs.com/package/dotenv)
-          * [express](https://www.npmjs.com/package/express)
-          * [express-handlebars](https://www.npmjs.com/package/express-handlebars)
-          * [mysql2](https://www.npmjs.com/package/mysql2)
-          * [sequelize](https://www.npmjs.com/package/sequelize)
-          * [passport](https://www.npmjs.com/package/passport)
+          * Server-side:
+            * [bcrypt-nodejs](https://www.npmjs.com/package/bcrypt-nodejs)
+            * [dotenv](https://www.npmjs.com/package/dotenv)
+            * [express](https://www.npmjs.com/package/express)
+            * [express-session](https://www.npmjs.com/package/express-session)
+            * [if-env](https://www.npmjs.com/package/if-env)
+            * [morgan](https://www.npmjs.com/package/morgan)
+            * [mysql2](https://www.npmjs.com/package/mysql2)
+            * [passport](https://www.npmjs.com/package/passport)
+            * [passport-local](https://www.npmjs.com/package/passport-local)
+            * [sequelize](https://www.npmjs.com/package/sequelize)
+          * Client-side:
+            * [axios](https://www.npmjs.com/package/axios)
+            * [mdbreact](https://www.npmjs.com/package/mdbreact)
+            * [react](https://www.npmjs.com/package/react)
+            * [react-dom](https://www.npmjs.com/package/react-dom)
+            * [react-iframe](https://www.npmjs.com/package/react-iframe)
+            * [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+            * [react-scripts](https://www.npmjs.com/package/react-scripts)
+          
     * Cloud:
       * [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) with [JawsDB MySQL plugin](https://devcenter.heroku.com/articles/jawsdb)
       * [Firebase Realtime DB](https://firebase.google.com/docs/web/setup)
@@ -94,11 +113,8 @@
         * /client (React app specific directories)
           * /node_modules (ignored by git) - generated first time npm install executes
           * /public
-          * assets
-            * /css
-            * /images
-            * /js
-            * /readme_links
+            * /assets
+              * /readmelinks
           * /src
             * /components
               * /pages
