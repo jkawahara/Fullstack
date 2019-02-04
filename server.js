@@ -16,10 +16,11 @@ const app = express();
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
+const syncOptions = { force : false }
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "development") {
   app.use(express.static("client/build"));
+  syncOptions.force = true
 }
 
 // Passport setup
@@ -33,7 +34,7 @@ app.use(passport.session());
 app.use(routes);
 
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync().then(function() {
+db.sequelize.sync( syncOptions ).then(function() {
   app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
