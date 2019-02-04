@@ -74,7 +74,7 @@
     * 64 bit operating system 
     * git version 2.18.0
     * Visual Studio Code Version 1.29.1
-    * [GitHub projectTwo](https://github.com/sgenini/projectTwo)
+    * [GitHub Project-3](https://github.com/OrionAbrams/Project-3)
     * Chrome Version 70.0.3538.110 (Official Build) (64-bit)
   * Built With:
     * This app was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -107,6 +107,8 @@
     * Cloud:
       * [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) with [JawsDB MySQL plugin](https://devcenter.heroku.com/articles/jawsdb)
       * [Firebase Realtime DB](https://firebase.google.com/docs/web/setup)
+    * Communications:
+      * Websocket TBD
   * Installing:
     * For further development or use of this application, clone or download application files from GitHub, which is organized into the following directory structure:
       * /Project-3 (application root directory level for Node/Express server)
