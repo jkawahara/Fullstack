@@ -24,10 +24,10 @@
       * News
       * Add new community... ![addcommunity.png](public/assets/readme_links/addcommunity.png "addcommunity")
       * JSON Resources
-        * Communities ![jsoncomms.png](public/assets/readme_links/jsoncomms.png "jsoncomms")
-        * Users ![jsonusers.png](public/assets/readme_links/jsonusers.png "jsonusers")
-        * Pets ![jsonpets.png](public/assets/readme_links/jsonpets.png "jsonpets")
-  * Design Description ![architecture.png](public/assets/readme_links/architecture.png "achitecture")
+        * Classes ![jsonclasses.png](client/public/assets/readme_links/jsonclasses.png "jsonclasses")
+        * Lessons ![jsonlessons.png](client/public/assets/readme_links/jsonlessons.png "jsonlessons")
+        * Users ![jsonusers.png](client/public/assets/readme_links/jsonusers.png "jsonusers")
+  * Design Description ![architecture.png](client/public/assets/readme_links/architecture.png "achitecture")
     * Application Setup (server.js)
       * Configure Express web app framework listening on process.env.PORT (Heroku) or default to 3000. Parse URL encoded, any type including nested objects, and JSON and call appropriate routing.
       * Required modules: npm (dotenv, express, express-handlebars), path
