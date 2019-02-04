@@ -4,38 +4,44 @@ module.exports = {
   findAll: function(req, res) {
     db.Class
       .findAll({
-        include:
-          [
+        include: [
             db.Lesson,
             db.User
-          ]
-        })
+        ]
+      })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findById: function(req, res) {
+    db.Class
+      .findById(req.params.id)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  create: function(req, res) {
+    db.Class
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  update: function(req, res) {
+    db.Class
+      .update(req.body, {
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  delete: function(req, res) {
+    db.Class
+      .destroy({
+        where: {
+          id: req.params.id
+        }
+      })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }
-  // findById: function(req, res) {
-  //   db.Lesson
-  //     .findById(req.params.id)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
-  // create: function(req, res) {
-  //   db.Lesson
-  //     .create(req.body)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
-  // update: function(req, res) {
-  //   db.Lesson
-  //     .findOneAndUpdate({ _id: req.params.id }, req.body)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
-  // remove: function(req, res) {
-  //   db.Lesson
-  //     .findById({ _id: req.params.id })
-  //     .then(dbModel => dbModel.remove())
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // }
 };
