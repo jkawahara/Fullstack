@@ -20,20 +20,26 @@ function NavTabs() {
               Lessons
       </MDBDropdownToggle>
             <MDBDropdownMenu basic>
-              <Link
-                to="/lessons/react"
-                className={window.location.pathname === "/lessons/react" ? "nav-link active" : "nav-link"}
-              >
-                <MDBDropdownItem>React Lessons</MDBDropdownItem>
-              </Link>
-              <li class="dropdown-submenu">
-                <a class="dropdown-item" tabindex="-1" href="#">React Lessons</a>
-                <ul class="dropdown-menu">
-                  <li class="dropdown-item"><a tabindex="-1" href="/lessons/react/1">Lesson 1 - State</a></li>
-                  <li class="dropdown-item"><a tabindex="-1" href="/lessons/react/2">Lesson 2 - Props</a></li>
-                  <li class="dropdown-item"><a tabindex="-1" href="/lessons/react/3">Lesson 3 - Forms</a></li>
-                </ul>
-              </li>
+              <ul className="list-unstyled">
+                <li className="dropdown-submenu">
+                  <a className="dropdown-item" tabIndex="-1" href="#">React Lessons</a>
+                  <ul className="dropdown-menu">
+                    <li className="dropdown-item"><a tabIndex="-1" href="/lessons/react/1">Lesson 1 - State</a></li>
+                    <li className="dropdown-item"><a tabIndex="-1" href="/lessons/react/2">Lesson 2 - Props</a></li>
+                    <li className="dropdown-item"><a tabIndex="-1" href="/lessons/react/3">Lesson 3 - Forms</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul className="list-unstyled">
+                <li className="dropdown-submenu">
+                  <a className="dropdown-item" tabIndex="-1" href="#">Mongo Lessons</a>
+                  <ul className="dropdown-menu">
+                    <li className="dropdown-item"><a tabIndex="-1" href="/lessons/mongo/4">Lesson 4 - Create</a></li>
+                    <li className="dropdown-item"><a tabIndex="-1" href="/lessons/mongo/5">Lesson 5 - Delete</a></li>
+                    <li className="dropdown-item"><a tabIndex="-1" href="/lessons/mongo/6">Lesson 6 - Update</a></li>
+                  </ul>
+                </li>
+              </ul>
             </MDBDropdownMenu>
           </MDBDropdown>
         </li>
