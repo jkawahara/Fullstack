@@ -5,7 +5,6 @@ const router = require("express").Router();
 const lessonsController = require("../controllers/lessonsController");
 const classesController = require("../controllers/classesController");
 const usersController = require("../controllers/usersController");
-const authenticationController = require("../controllers/authenticationController");
 const db = require("../models");
 
 router.route("/lessons")
@@ -44,7 +43,7 @@ router.route("/login")
   })
   .get(isAuthenticated, function (req, res) {
     console.log("authenticated")
-    //one problem here is we don't want to redirect user to an api route, we want to redirect to their profile, but all the routes here are prepended with api/
+    // need a userprofile route for this to work, but it does send id of user to front end at least in console
     res.redirect("/userprofile/" + req.user.id)
   })
 router.route("/logout")
