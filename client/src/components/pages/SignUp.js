@@ -1,5 +1,8 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import API from "../../utils/API.js";                                                          
+
+
 
 var sectionStyle = {
   width: "100%",
@@ -8,12 +11,41 @@ var sectionStyle = {
 
 class SignUp extends React.Component {
     state = {
-      signup: ''
+      name: "",
+      email: "",
+      password: ""
     };
+handleInputChange = event => {
+      const { name, value } = event.target;
+      
+  
+      this.setState({
+        [name]: value
+      });
+    };
+
+ handleFormSubmit = event => {
+      event.preventDefault();
+
+      API.saveUser({
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password
+      }).then(() => { 
+        this.setState({
+          name: "",
+          email: "",
+          password: ""
+        })
+      })
+  
+    };
+  
+
 
 render() { 
   return (
-    <div style={sectionStyle} >
+    <div >
     <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
     {/* if material bootstrap is installed, you should see the below button as green */}
    
@@ -21,22 +53,28 @@ render() {
     <MDBContainer>
       <MDBRow>
         <MDBCol md="4"></MDBCol>
-        <MDBCol md="4"> 
+        <MDBCol md="4">
+         <form className="form"> //for comp
         <div className="form-group">
-      <input size="30" type="Name" className="form-control" placeholder="Your Name" />
+      <input size="30" name="name" className="form-control" placeholder="Your Name" value={this.state.name} onChange={this.handleInputChange} />
     
     </div>
    <div className="form-group">
-      <input size="30" type="email" className="form-control" placeholder="Your e-mail" />
+      <input size="30" name="email" className="form-control" placeholder="Your e-mail" value={this.state.email} onChange={this.handleInputChange} />
     
     </div>
     <div className="form-group">
-      <input size="30" type="password" className="form-control" placeholder="Your password" />
+      <input size="30" name="password" className="form-control" placeholder="Your password" value={this.state.password} onChange={this.handleInputChange} />
     
     </div>
-<button className="btn-default">SignUp</button>
-    
-       
+    <button
+          onClick={this.handleFormSubmit}
+          type="submit"
+          className="btn btn-lg btn-danger float-right"
+        >
+          Sign Up
+        </button>
+       </form>
 
    
         </MDBCol>
