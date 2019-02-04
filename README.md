@@ -18,11 +18,13 @@
   * Functionality - refer to [video of application user flow](https://drive.google.com/drive/folders/1wj_yyX_CARBAoKz1-fLkkAp_YyxgihzD?usp=sharing):
     * Wireframe
       * Home page ![homepage.png](client/public/assets/readmelinks/homepage.png "homepage")
+      * NavBar ![navbar.png](client/public/assets/readmelinks/navbar.png "navbar")
       * Sign up as a new user ![signup.png](client/public/assets/readmelinks/signup.png "signup")
       * Login ![login.png](client/public/assets/readmelinks/login.png "login")
+      * OAuth login ![oauthsignin.png](client/public/assets/readmelinks/oauthsignin.png "oauthsignin")
       * Lessons page ![lessonspage.png](client/public/assets/readmelinks/lessonspage.png "lessonspage")
-      * Profile page ![profilepage.png](client/public/assets/readmelinks/profilepage.png "profilepage")
-      * Charts ![charts.png](client/public/assets/readmelinks/charts.png "charts")
+      * Profile page TBD ![profilepage.png](client/public/assets/readmelinks/profilepage.png "profilepage")
+      * Charts TBD ![charts.png](client/public/assets/readmelinks/charts.png "charts")
       * JSON Resources
         * Classes ![jsonclasses.png](client/public/assets/readmelinks/jsonclasses.png "jsonclasses")
         * Lessons ![jsonlessons.png](client/public/assets/readmelinks/jsonlessons.png "jsonlessons")
@@ -74,7 +76,7 @@
     * 64 bit operating system 
     * git version 2.18.0
     * Visual Studio Code Version 1.29.1
-    * [GitHub projectTwo](https://github.com/sgenini/projectTwo)
+    * [GitHub Project-3](https://github.com/OrionAbrams/Project-3)
     * Chrome Version 70.0.3538.110 (Official Build) (64-bit)
   * Built With:
     * This app was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -107,6 +109,8 @@
     * Cloud:
       * [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) with [JawsDB MySQL plugin](https://devcenter.heroku.com/articles/jawsdb)
       * [Firebase Realtime DB](https://firebase.google.com/docs/web/setup)
+    * Communications:
+      * Websocket TBD
   * Installing:
     * For further development or use of this application, clone or download application files from GitHub, which is organized into the following directory structure:
       * /Project-3 (application root directory level for Node/Express server)
