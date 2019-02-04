@@ -24,10 +24,10 @@
       * News
       * Add new community... ![addcommunity.png](public/assets/readme_links/addcommunity.png "addcommunity")
       * JSON Resources
-        * Classes ![jsonclasses.png](client/public/assets/readme_links/jsonclasses.png "jsonclasses")
-        * Lessons ![jsonlessons.png](client/public/assets/readme_links/jsonlessons.png "jsonlessons")
-        * Users ![jsonusers.png](client/public/assets/readme_links/jsonusers.png "jsonusers")
-  * Design Description ![architecture.png](client/public/assets/readme_links/architecture.png "achitecture")
+        * Classes ![jsonclasses.png](client/public/assets/readmelinks/jsonclasses.png "jsonclasses")
+        * Lessons ![jsonlessons.png](client/public/assets/readmelinks/jsonlessons.png "jsonlessons")
+        * Users ![jsonusers.png](client/public/assets/readmelinks/jsonusers.png "jsonusers")
+  * Design Description ![architecture.png](client/public/assets/readmelinks/architecture.png "achitecture")
     * Application Setup (server.js)
       * Configure Express web app framework listening on process.env.PORT (Heroku) or default to 3000. Parse URL encoded, any type including nested objects, and JSON and call appropriate routing.
       * Required modules: npm (dotenv, express, express-handlebars), path
@@ -38,7 +38,7 @@
       * Available Seed with TBD
     * Configuration Definition (config.json)
       * Define configuration object with nested development, test and production environments
-    * Model Setup (/models, index.js) ![model.png](public/assets/readme_links/model.png "model")
+    * Model Setup (/models, index.js) ![model.png](client/public/assets/readmelinks/model.png "model")
       * Define Sequelize version of Community, User, Pet, PetPhoto, PhotoPost objects including associations
       * TBD Configure connection to MySQL configuration
       * TBD Include connection conditional to enable MySQL with Heroku deployment using JawsDB add-on
