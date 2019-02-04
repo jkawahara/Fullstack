@@ -52,7 +52,6 @@ class Lesson extends React.Component {
   render() {
     return (
       <div>
-        <br></br> <br></br> <br></br> <br></br> <br></br>
         <div>
           <Iframe url={this.state.lesson}
             width="100%"
