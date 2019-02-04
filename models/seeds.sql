@@ -20,8 +20,8 @@ VALUES
 INSERT INTO Lessons (name, lessonUrl, ClassId) 
 VALUES
   ('Lesson 1', 'https://codesandbox.io/embed/olrox0pxv5', 1),
-  ('Lesson 2', 'https://codesandbox.io/embed/olrox0pxv5', 2),
-  ('Lesson 3', 'https://codesandbox.io/embed/olrox0pxv5', 3),
-  ('Lesson 4', 'https://codesandbox.io/embed/1483ql8m4j', 1),
-  ('Lesson 5', 'https://codesandbox.io/embed/1483ql8m4j', 2),
-  ('Lesson 6', 'https://codesandbox.io/embed/mmqyjzljvj', 1);
+  ('Lesson 1', 'https://codesandbox.io/embed/olrox0pxv5', 2),
+  ('Lesson 1', 'https://codesandbox.io/embed/olrox0pxv5', 3),
+  ('Lesson 2', 'https://codesandbox.io/embed/1483ql8m4j', 1),
+  ('Lesson 2', 'https://codesandbox.io/embed/1483ql8m4j', 2),
+  ('Lesson 3', 'https://codesandbox.io/embed/mmqyjzljvj', 1);
