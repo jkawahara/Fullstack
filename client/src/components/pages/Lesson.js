@@ -2,18 +2,34 @@ import React from "react";
 import Iframe from "react-iframe"
 import axios from "axios";
 
-// we need to get user's window from url to direct them to right lesson from database
-
-// currentLesson will actually always change to whatever embed link we get from database
-// let currentLesson = "https://codesandbox.io/embed/olrox0pxv5"
-
 class Lesson extends React.Component {
   state = {
     lesson: ""
   };
 
+  //This history allows a listen for a url change, which allows new lesson to render without refreshing page.
   componentWillMount() {
-    // n this case, lastTWo will become ajax/1 or whatever window user is in
+    this.unlisten = this.props.history.listen((location, action) => {
+      console.log("on route change");
+
+      var url = window.location.pathname;
+      var lessonNumber = url
+        .split("/") // split to an array
+        .slice(-2) // take the two last elements
+        .join('/') // join back to a string;
+      console.log(lessonNumber);
+      axios.get("/api/lesson/" + lessonNumber)
+
+        .then(res => {
+          console.log("Sent")
+          console.log(res.data.lessonUrl)
+          this.setState({ lesson: res.data.lessonUrl })
+        })
+    });
+  }
+
+  //had to put this here because couldn't go directly to a lesson with url otherwise
+  componentDidMount() {
     var url = window.location.pathname;
     var lessonNumber = url
       .split("/") // split to an array
@@ -22,13 +38,16 @@ class Lesson extends React.Component {
     console.log(lessonNumber);
     axios.get("/api/lesson/" + lessonNumber)
 
-    .then(res => {
-      console.log("Sent")
-      console.log(res.data.lessonUrl)
-      this.setState({ lesson: res.data.lessonUrl })
-    })
+      .then(res => {
+        console.log("Sent")
+        console.log(res.data.lessonUrl)
+        this.setState({ lesson: res.data.lessonUrl })
+      })
   }
 
+  componentWillUnmount() {
+    this.unlisten();
+  }
 
   render() {
     return (
