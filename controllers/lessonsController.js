@@ -3,7 +3,15 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
     db.Lesson
-      .findAll(req.query)
+      .findAll({
+        include:
+          [
+            db.Class
+          ],
+        order: [
+          ["id", "ASC"]
+        ]
+        })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
