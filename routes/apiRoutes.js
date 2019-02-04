@@ -1,9 +1,11 @@
 const passport = require("../config/passport");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 // const axios = require("axios");
 const router = require("express").Router();
 const lessonsController = require("../controllers/lessonsController");
 const classesController = require("../controllers/classesController");
 const usersController = require("../controllers/usersController");
+const authenticationController = require("../controllers/authenticationController");
 const db = require("../models");
 
 router.route("/lessons")
@@ -36,10 +38,26 @@ router.route("/users/:id")
   .put(usersController.update)
   .delete(usersController.delete);
 
+router.route("/login")
+  .post(passport.authenticate("local"), function (req, res) {
+    res.redirect("/api/login")
+  })
+  .get(isAuthenticated, function (req, res) {
+    console.log("authenticated")
+    //one problem here is we don't want to redirect user to an api route, we want to redirect to their profile, but all the routes here are prepended with api/
+    res.redirect("/userprofile/" + req.user.id)
+  })
+router.route("/logout")
+  .get(function (req, res) {
+    req.logout();
+    res.redirect("/");
+  })
+
 // router.route("/signup")
 //   .post(usersController.create);
 
 // router.route("/login")
 //   .post(userCOntroller.findById)
+
 
 module.exports = router;
