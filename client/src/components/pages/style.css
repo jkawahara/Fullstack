@@ -6,6 +6,12 @@ p {
   text-align: center;
 }
 
+.smallPic {
+  max-width: 20%;
+  max-height: 200px;
+  border-radius: 6px;
+}
+
 /* ------------------------ Possible Stuff ------------------------ */
 /*
 .footer {

@@ -44,14 +44,15 @@ router.route("/login")
   .get(isAuthenticated, function (req, res) {
     console.log("authenticated")
     // need a userprofile route for this to work, but it does send id of user to front end at least in console
-    res.redirect("/userprofile/" + req.user.id)
+    res.redirect("/profile/" + req.user.id)
   })
 router.route("/logout")
   .get(function (req, res) {
     req.logout();
     res.redirect("/");
   })
-
+router.route("/thisUserLessons/:id")
+  .get(lessonsController.loadUser) 
 // router.route("/signup")
 //   .post(usersController.create);
 

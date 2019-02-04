@@ -51,5 +51,18 @@ module.exports = {
       })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  loadUser: function (req, res) {
+    db.Class
+    .findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [
+        db.Lesson
+      ]
+    })
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
   }
 };
