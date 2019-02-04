@@ -5,21 +5,19 @@ import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBBtn } from "mdbreac
 
 function NavTabs() {
   return (
-    <nav className="navbar fixed-top bg-dark navbar-dark navbar-expand my-nav">
+    <nav className="navbar bg-dark navbar-dark navbar-expand">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link
-            to="/"
-            className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
-          >
-            <MDBBtn color="primary" >Fullstack</MDBBtn>       </Link>
+          <Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
+            <MDBBtn color="primary" >Fullstack</MDBBtn>
+          </Link>
         </li>
         <li className="nav-item">
-          <MDBDropdown>
+          <MDBDropdown className="padTop">
             <MDBDropdownToggle caret color="primary">
               Lessons
-      </MDBDropdownToggle>
-            <MDBDropdownMenu basic>
+            </MDBDropdownToggle>
+            <MDBDropdownMenu>
               <ul className="list-unstyled">
                 <li className="dropdown-submenu">
                   <a className="dropdown-item" tabIndex="-1" href="#">React Lessons</a>
@@ -46,25 +44,19 @@ function NavTabs() {
       </ul>
       <ul className="navbar-nav navbar-right ml-auto">
         <li>
-          <Link
-            to="/profile"
-            className={window.location.pathname === "/profile" ? "nav-link active" : "nav-link"}
-          >
+          <Link to="/profile" className={window.location.pathname === "/profile" ? "nav-link active" : "nav-link"}>
             <MDBBtn color="primary" >Profile</MDBBtn>
           </Link>
         </li>
-        <li>
-          <div className="nav-item g-signin2" data-onsuccess="onSignIn"></div>
-        </li>
         <li className="nav-item active">
           <Link to="/SignUp" className={window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}>
-            SignUp
-        </Link>
+          <MDBBtn color="primary" >SignUp</MDBBtn>
+          </Link>
         </li>
         <li className="nav-item active">
           <Link to="/Login" className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}>
-            Login
-        </Link>
+          <MDBBtn color="primary" >Login</MDBBtn>
+          </Link>
         </li>
       </ul>
 

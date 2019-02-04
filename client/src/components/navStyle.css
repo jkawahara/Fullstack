@@ -1,6 +1,6 @@
 /* I can't seem to get a margin below navbar without lots of breaks */
-.my-nav {
-  padding-top: 200px;
+.padTop {
+  margin-top: 7.5px;
 }
 
 .dropdown-submenu {
