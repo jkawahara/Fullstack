@@ -1,6 +1,4 @@
-// var db = require("../models");
-var passport = require("../config/passport");
-var isAuthenticated = require("../config/middleware/isAuthenticated");
+const passport = require("../config/passport");
 // const axios = require("axios");
 const router = require("express").Router();
 const lessonsController = require("../controllers/lessonsController");
@@ -9,43 +7,39 @@ const usersController = require("../controllers/usersController");
 const db = require("../models");
 
 router.route("/lessons")
-  .get(lessonsController.findAll);
-
-router.route("/classes")
-  .get(classesController.findAll);
-
-router.route("/users")
-  .get(usersController.findAll);
+  .get(lessonsController.findAll)
+  .post(lessonsController.create);
 
 router.route("/lesson/react/:id")
-  .get(lessonsController.findOne)
+  .get(lessonsController.findOne);
+
+router.route("/lessons/:id")
+  .get(lessonsController.findById)
+  .put(lessonsController.update)
+  .delete(lessonsController.delete);
+
+router.route("/classes")
+  .get(classesController.findAll)
+  .post(classesController.create);
+
+router.route("/classes/:id")
+  .get(classesController.findById)
+  .put(classesController.update)
+  .delete(classesController.delete);
+
+router.route("/users")
+  .get(usersController.findAll)
+  .post(usersController.create);
+
+router.route("/users/:id")
+  .get(usersController.findById)
+  .put(usersController.update)
+  .delete(usersController.delete);
+
+// router.route("/signup")
+//   .post(usersController.create);
+
+// router.route("/login")
+//   .post(userCOntroller.findById)
 
 module.exports = router;
-
-//     // If the user has valid login credentials, send them to the members page.
-//     app.post("/login", passport.authenticate("local"), function(req, res) {
-//       res.json("/user");
-//     });
-
-//     app.get("/user", isAuthenticated, function(req, res) {
-//       // res.sendFile(path.join(__dirname, "../public/user-page.html"));
-//       res.json(res)
-//     });
-
-//     app.post("/signup", function(req, res) {
-//       db.User.create({
-//         name: req.body.name,
-//         email: req.body.email,
-//         password: req.body.password
-//       })
-//         .then(function(data) {
-//           console.log("added to database" + data)
-//           res.redirect(307, "/api/login");
-//         })
-//         .catch(function(err) {
-//           console.log(err);
-//           res.json(err);
-//           // res.status(422).json(err.errors[0].message);
-//         });
-//     });
-// }
