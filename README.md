@@ -18,11 +18,13 @@
   * Functionality - refer to [video of application user flow](https://drive.google.com/drive/folders/1wj_yyX_CARBAoKz1-fLkkAp_YyxgihzD?usp=sharing):
     * Wireframe
       * Home page ![homepage.png](client/public/assets/readmelinks/homepage.png "homepage")
+      * NavBar ![navbar.png](client/public/assets/readmelinks/navbar.png "navbar")
       * Sign up as a new user ![signup.png](client/public/assets/readmelinks/signup.png "signup")
       * Login ![login.png](client/public/assets/readmelinks/login.png "login")
+      * OAuth login ![oauthsignin.png](client/public/assets/readmelinks/oauthsignin.png "oauthsignin")
       * Lessons page ![lessonspage.png](client/public/assets/readmelinks/lessonspage.png "lessonspage")
-      * Profile page ![profilepage.png](client/public/assets/readmelinks/profilepage.png "profilepage")
-      * Charts ![charts.png](client/public/assets/readmelinks/charts.png "charts")
+      * Profile page TBD ![profilepage.png](client/public/assets/readmelinks/profilepage.png "profilepage")
+      * Charts TBD ![charts.png](client/public/assets/readmelinks/charts.png "charts")
       * JSON Resources
         * Classes ![jsonclasses.png](client/public/assets/readmelinks/jsonclasses.png "jsonclasses")
         * Lessons ![jsonlessons.png](client/public/assets/readmelinks/jsonlessons.png "jsonlessons")
