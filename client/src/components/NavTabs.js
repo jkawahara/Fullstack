@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./navStyle.css"
-import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBBtn } from "mdbreact";
+import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBBtn } from "mdbreact";
 
 function NavTabs() {
   return (
@@ -24,9 +24,9 @@ function NavTabs() {
                 <li className="dropdown-submenu">
                   <a className="dropdown-item" tabIndex="-1" href="#">React Lessons</a>
                   <ul className="dropdown-menu">
-                    <li className="dropdown-item"><a tabIndex="-1" href="/lessons/react/1">Lesson 1 - State</a></li>
-                    <li className="dropdown-item"><a tabIndex="-1" href="/lessons/react/2">Lesson 2 - Props</a></li>
-                    <li className="dropdown-item"><a tabIndex="-1" href="/lessons/react/3">Lesson 3 - Forms</a></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/react/1">Lesson 1 - State</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/react/2">Lesson 2 - Props</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/react/3">Lesson 3 - Forms</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -34,9 +34,9 @@ function NavTabs() {
                 <li className="dropdown-submenu">
                   <a className="dropdown-item" tabIndex="-1" href="#">Mongo Lessons</a>
                   <ul className="dropdown-menu">
-                    <li className="dropdown-item"><a tabIndex="-1" href="/lessons/mongo/4">Lesson 4 - Create</a></li>
-                    <li className="dropdown-item"><a tabIndex="-1" href="/lessons/mongo/5">Lesson 5 - Delete</a></li>
-                    <li className="dropdown-item"><a tabIndex="-1" href="/lessons/mongo/6">Lesson 6 - Update</a></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/mongo/4">Lesson 4 - Create</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/mongo/5">Lesson 5 - Delete</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/mongo/6">Lesson 6 - Update</Link></li>
                   </ul>
                 </li>
               </ul>
@@ -46,11 +46,19 @@ function NavTabs() {
       </ul>
       <ul className="navbar-nav navbar-right ml-auto">
         <li>
+          <Link
+            to="/profile"
+            className={window.location.pathname === "/profile" ? "nav-link active" : "nav-link"}
+          >
+            <MDBBtn color="primary" >Profile</MDBBtn>
+          </Link>
+        </li>
+        <li>
           <div className="nav-item g-signin2" data-onsuccess="onSignIn"></div>
         </li>
         <li className="nav-item active">
           <Link to="/SignUp" className={window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}>
-            Signup
+            SignUp
         </Link>
         </li>
         <li className="nav-item active">
