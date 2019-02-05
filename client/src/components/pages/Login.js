@@ -12,17 +12,22 @@ class Login extends React.Component {
     password: "",
   };
   
+  // When the component mounts, load user profile
+  // componentDidMount() {
+  //   this.loadProfile();
+  // }
+
   // Loads user profile and sets to this.state.user
-  loadProfile = () => {
-    API.getProfile({
-      email: this.state.email
-    })
-      .then(res => {
-        this.setState({ user: res.data, email: "", password: "" });
-      })
-      .catch(err => console.log(err));
-    };
-  
+  // loadProfile = () => {
+  //   API.getProfile({
+  //     email: this.state.email
+  //   })
+  //     .then(res => {
+  //       this.setState({ user: res.data, email: "", password: "" });
+  //     })
+  //     .catch(err => console.log(err));
+  //   };
+
   // Handles updating component state when the user types into the input field
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -39,8 +44,9 @@ class Login extends React.Component {
         email: this.state.email,
         password: this.state.password
       })
-        .then(() => {
-          this.loadProfile();
+        .then((res) => {
+          // Need to figure out proper structure to redirect to profile
+          window.location.replace(res);
         })
         .catch(err => console.log(err));
     }

@@ -44,15 +44,15 @@ router.route("/profile")
   .get(usersController.findOneEmail)
 
 router.route("/login")
-  .post(passport.authenticate("local"), (req, res) => {
-    console.log(req);
-    res.json("/api/login")
+  .post(passport.authenticate("local"), function (req, res) {
+    console.log(res);
+    res.json("/profile")
   })
-  .get(isAuthenticated, (req, res) => {
+  .get(isAuthenticated, function (req, res) {
     if (req.user) {
-      res.redirect("/api/profile/" + req.user.id)
+      res.redirect("/profile/" + req.user.id)
     }
-    res.redirect("api/signup");
+    res.redirect("/signup");
   })
 
 router.route("/logout")
