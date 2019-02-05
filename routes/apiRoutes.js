@@ -12,7 +12,7 @@ router.route("/lesson/react/:id")
   .get(lessonsController.findOneLesson);
 
 router.route("/lesson/jquery/:id")
-.get(lessonsController.findOne);
+.get(lessonsController.findOneLesson);
 
 router.route("/lessons/:id")
   .get(lessonsController.findOneId)

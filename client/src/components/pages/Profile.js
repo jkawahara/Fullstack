@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import { Link } from "react-router-dom";
+import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import "./style.css";
 
 class Profile extends React.Component {
@@ -40,7 +41,7 @@ componentDidMount() {
     for (let i = 0; i < res.data.Lessons.length; i++) {
       lessonsArray.push(
       <li>
-        <a href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].name}</a>
+        <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].name}</a>
       </li>)
     }
     this.setState({ lessons: lessonsArray })
@@ -59,10 +60,17 @@ componentDidMount() {
       <div>
         <MDBContainer>
           <h2>Welcome, {this.state.name}</h2>
+          <div right>
+          <Link to="/" className={window.location.pathname === "/logout" ? "nav-link active" : "nav-link"}>
+            <MDBBtn className="peach-gradient">
+              Logout
+            </MDBBtn>
+          </Link>
+          </div>
           <MDBContainer>
             <MDBRow>
               <MDBCol md="6">
-                <img className="smallPic" src={this.state.userPhotoUrl} />
+                <img alt="My Image" className="smallPic" src={this.state.userPhotoUrl} />
               </MDBCol>
               <MDBCol md="6">
                 <h3>
@@ -74,6 +82,7 @@ componentDidMount() {
               </MDBCol>
             </MDBRow>
           </MDBContainer>
+
         </MDBContainer>
       </div>
     );

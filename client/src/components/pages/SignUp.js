@@ -2,13 +2,6 @@ import React from "react";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import API from "../../utils/API.js";                                                          
 
-
-
-var sectionStyle = {
-  width: "100%",
-  height: "100vh"
-};
-
 class SignUp extends React.Component {
     state = {
       name: "",
@@ -18,7 +11,6 @@ class SignUp extends React.Component {
 handleInputChange = event => {
       const { name, value } = event.target;
       
-  
       this.setState({
         [name]: value
       });
@@ -46,40 +38,27 @@ handleInputChange = event => {
 render() { 
   return (
     <div >
-    <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-    {/* if material bootstrap is installed, you should see the below button as green */}
-   
-
     <MDBContainer>
       <MDBRow>
         <MDBCol md="4"></MDBCol>
         <MDBCol md="4">
-         <form className="form"> //for comp
-        <div className="form-group">
-      <input size="30" name="name" className="form-control" placeholder="Your Name" value={this.state.name} onChange={this.handleInputChange} />
-    
-    </div>
-   <div className="form-group">
-      <input size="30" name="email" className="form-control" placeholder="Your e-mail" value={this.state.email} onChange={this.handleInputChange} />
-    
-    </div>
-    <div className="form-group">
-      <input size="30" name="password" className="form-control" placeholder="Your password" value={this.state.password} onChange={this.handleInputChange} />
-    
-    </div>
-    <button
-          onClick={this.handleFormSubmit}
-          type="submit"
-          className="btn btn-lg btn-danger float-right"
-        >
-          Sign Up
-        </button>
-       </form>
-
-   
+          <form className="form"> //for comp
+            <div className="form-group">
+              <input size="30" name="name" className="form-control" placeholder="Your Name" value={this.state.name} onChange={this.handleInputChange} />
+            </div>
+            <div className="form-group">
+              <input size="30" name="email" className="form-control" placeholder="Your e-mail" value={this.state.email} onChange={this.handleInputChange} />
+            </div>
+            <div className="form-group">
+              <input size="30" name="password" className="form-control" placeholder="Your password" value={this.state.password} onChange={this.handleInputChange} />
+            </div>
+            <button onClick={this.handleFormSubmit} type="submit" className="btn btn-lg btn-danger float-right">
+              Sign Up
+            </button>
+          </form>
         </MDBCol>
         <MDBCol md="4"></MDBCol>
-      </MDBRow >
+      </MDBRow>
     </MDBContainer>
 
 
