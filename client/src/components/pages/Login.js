@@ -31,16 +31,18 @@ class Login extends Component {
         password: this.state.password
       })
         .then((res) => {
-          console.log(res.data);
+          console.log(res)
           if (res.data){
             window.location.replace(res.data);
           }
           this.setState({ user: res.data, email: "", password: "", fireRedirect: true });
         })
-        .catch(err => console.log(err),
-        // doesn't auto redirect to sign up page, but at least lets error know that email/password not in DB
-        alert("Sign in credentials invalid")
-        );
+        .catch(err => {
+          console.log(err);
+          if (err) {
+            alert("Sign in credentials invalid");
+          }
+        });
     }
   };
 
