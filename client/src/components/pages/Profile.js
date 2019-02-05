@@ -40,7 +40,7 @@ componentDidMount() {
     for (let i = 0; i < res.data.Lessons.length; i++) {
       lessonsArray.push(
       <li>
-        <a href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].name}</a>
+        <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].name}</a>
       </li>)
     }
     this.setState({ lessons: lessonsArray })
@@ -62,7 +62,7 @@ componentDidMount() {
           <MDBContainer>
             <MDBRow>
               <MDBCol md="6">
-                <img className="smallPic" src={this.state.userPhotoUrl} />
+                <img alt="My Image" className="smallPic" src={this.state.userPhotoUrl} />
               </MDBCol>
               <MDBCol md="6">
                 <h3>

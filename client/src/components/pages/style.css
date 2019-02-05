@@ -8,6 +8,11 @@ p {
   border-radius: 6px;
 }
 
+.maxHeight {
+  max-height: 100vh;
+  max-width: 100%;
+}
+
 /* ------------------------ Possible Stuff ------------------------ */
 /*
 .footer {
