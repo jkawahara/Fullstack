@@ -1,6 +1,8 @@
-/* I can't seem to get a margin below navbar without lots of breaks */
-.padTop {
-  margin-top: 7.5px;
+nav {
+  height: 80px;
+}
+.marBot {
+  margin-bottom: 23px;
 }
 
 .dropdown-submenu {
