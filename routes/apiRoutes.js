@@ -14,6 +14,9 @@ router.route("/lessons")
 router.route("/lesson/react/:id")
   .get(lessonsController.findOne);
 
+router.route("/lesson/jquery/:id")
+.get(lessonsController.findOne);
+
 router.route("/lessons/:id")
   .get(lessonsController.findById)
   .put(lessonsController.update)
