@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import "./style.css";
+var profileNum
 
 class Profile extends React.Component {
   state = {
@@ -12,38 +13,38 @@ class Profile extends React.Component {
     lessons: ""
   };
 
-componentDidMount() {
-  var profileNum = window.location.pathname.split("/").pop();
-  var thisUserClass
-  axios.get("/profile/" + profileNum)
-  .then(res => {
-    console.log("we need req.user from passport to know which profile page to send user to, also to load this user's data")
-    console.log(res.data)
-    console.log(res.data.ClassId)
-    if (!res.data){
-      alert("You must log in to view your profile")
-    }
-    else {
-      thisUserClass = res.data.ClassId
-    }
-    this.setState({ userPhotoUrl: res.data.userPhotoUrl, name: res.data.name })
-  }).then(() => {
-    console.log(thisUserClass)
-    axios.get("/profile/class/" + thisUserClass)
+  componentDidMount() {
+    var thisUserClass
+    var currentProfile = window.location.pathname.split("/").pop();
+    axios.get("/profile")
     .then(res => {
       console.log(res.data)
-      let lessonsArray = [];
-      for (let i = 0; i < res.data.Lessons.length; i++) {
-        lessonsArray.push(
-        <li>
-          <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].name}</a>
-        </li>)
+      if (res.data.isAdmin){
+        profileNum = currentProfile
       }
-      console.log(res.data.name)
-      this.setState({ class: res.data.name, lessons: lessonsArray })
-    })
-  })
-}
+      else {
+      profileNum = res.data.id
+      }
+  }).then(() =>
+    axios.get("/profile/" + profileNum)
+      .then(res => {
+          thisUserClass = res.data.ClassId
+        this.setState({ userPhotoUrl: res.data.userPhotoUrl, name: res.data.name })
+      }).then(() => {
+        axios.get("/profile/class/" + thisUserClass)
+          .then(res => {
+            console.log(res.data)
+            let lessonsArray = [];
+            for (let i = 0; i < res.data.Lessons.length; i++) {
+              lessonsArray.push(
+                <li>
+                  <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].name}</a>
+                </li>)
+            }
+            this.setState({ class: res.data.name, lessons: lessonsArray })
+          })
+      }))
+  }
 
   render() {
     return (
@@ -51,11 +52,11 @@ componentDidMount() {
         <MDBContainer>
           <h2>Welcome, {this.state.name}</h2>
           <div right>
-          <Link to="/" className={window.location.pathname === "/logout" ? "nav-link active" : "nav-link"}>
-            <MDBBtn className="peach-gradient">
-              Logout
+            <Link to="/" className={window.location.pathname === "/logout" ? "nav-link active" : "nav-link"}>
+              <MDBBtn className="peach-gradient">
+                Logout
             </MDBBtn>
-          </Link>
+            </Link>
           </div>
           <MDBContainer>
             <MDBRow>

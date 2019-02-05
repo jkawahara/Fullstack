@@ -12,7 +12,7 @@ module.exports = function(app) {
     console.log("authenticated");
     console.log(req.user)
     if (req.user) {
-      return res.json("/profile/" + req.user.id)
+      return res.json("/profile/")
     }
     return res.json("/signup");
   })
@@ -21,7 +21,12 @@ module.exports = function(app) {
     req.logout();
     return res.redirect("/");
   });
-
+  app.get("/profile/", isAuthenticated, function(req, res) {
+    if (req.user) {
+      return res.json(req.user)
+    }
+    return res.json("/signup");
+  })
   app.get("/profile/:id", isAuthenticated, function(req, res) {
     console.log(req.user)
     db.User
