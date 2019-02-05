@@ -1,11 +1,8 @@
-const passport = require("../config/passport");
-var isAuthenticated = require("../config/middleware/isAuthenticated");
-// const axios = require("axios");
+// *** Include Modules: npm (express), /controllers
 const router = require("express").Router();
 const lessonsController = require("../controllers/lessonsController");
 const classesController = require("../controllers/classesController");
 const usersController = require("../controllers/usersController");
-const db = require("../models");
 
 router.route("/lessons")
   .get(lessonsController.findAll)
@@ -39,26 +36,5 @@ router.route("/users/:id")
   .get(usersController.findOne)
   .put(usersController.update)
   .delete(usersController.delete);
-
-router.route("/profile")
-  .get(usersController.findOneEmail)
-
-router.route("/login")
-  .post(passport.authenticate("local"), function (req, res) {
-    console.log(res);
-    res.json("/profile")
-  })
-  .get(isAuthenticated, function (req, res) {
-    if (req.user) {
-      res.redirect("/profile/" + req.user.id)
-    }
-    res.redirect("/signup");
-  })
-
-router.route("/logout")
-  .get(function (req, res) {
-    req.logout();
-    res.redirect("/");
-  })
 
 module.exports = router;
