@@ -24,4 +24,8 @@ VALUES
   ('Lesson 1', 'https://codesandbox.io/embed/olrox0pxv5', 3),
   ('Lesson 2', 'https://codesandbox.io/embed/1483ql8m4j', 1),
   ('Lesson 2', 'https://codesandbox.io/embed/1483ql8m4j', 2),
-  ('Lesson 3', 'https://codesandbox.io/embed/mmqyjzljvj', 1);
+  ('Lesson 3', 'https://codesandbox.io/embed/mmqyjzljvj', 1),
+
+  ('Lesson 4', 'https://codesandbox.io/embed/k5y27rrn93', 1),
+  ('Lesson 5', 'https://codesandbox.io/embed/ovlmo5w495', 1),
+  ('Lesson 6', 'https://codesandbox.io/embed/7j9prq2010', 1)
