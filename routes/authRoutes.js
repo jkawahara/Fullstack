@@ -12,9 +12,9 @@ module.exports = function(app) {
     console.log("authenticated");
     console.log(req.user)
     if (req.user) {
-      return res.json("/profile/")
+      return res.send("/profile/")
     }
-    return res.json("/signup");
+    return res.redirect("/signup");
   })
 
   app.get("/logout", function(req, res) {
@@ -23,9 +23,9 @@ module.exports = function(app) {
   });
   app.get("/profile/", isAuthenticated, function(req, res) {
     if (req.user) {
-      return res.json(req.user)
+      return res.send(req.user)
     }
-    return res.json("/signup");
+    return res.redirect("/signup");
   })
   app.get("/profile/:id", isAuthenticated, function(req, res) {
     console.log(req.user)
