@@ -19,6 +19,9 @@ router.route("/lessons/:id")
   .put(lessonsController.update)
   .delete(lessonsController.delete);
 
+router.route("/thisUserLessons/:id")
+  .get(lessonsController.loadUser) 
+
 router.route("/classes")
   .get(classesController.findAll)
   .post(classesController.create);
@@ -38,26 +41,20 @@ router.route("/users/:id")
   .delete(usersController.delete);
 
 router.route("/login")
-  .post(passport.authenticate("local"), function (req, res) {
-    res.redirect("/api/login")
+  .post(passport.authenticate("local"), (req, res) => {
+    res.json("/api/profile")
   })
-  .get(isAuthenticated, function (req, res) {
-    console.log("authenticated")
-    // need a userprofile route for this to work, but it does send id of user to front end at least in console
-    res.redirect("/profile/" + req.user.id)
+  .get(isAuthenticated, (req, res) => {
+    if (req.user) {
+      res.redirect("/api/profile/" + req.user.id)
+    }
+    res.redirect("api/signup");
   })
+
 router.route("/logout")
   .get(function (req, res) {
     req.logout();
     res.redirect("/");
   })
-router.route("/thisUserLessons/:id")
-  .get(lessonsController.loadUser) 
-// router.route("/signup")
-//   .post(usersController.create);
-
-// router.route("/login")
-//   .post(userCOntroller.findById)
-
 
 module.exports = router;
