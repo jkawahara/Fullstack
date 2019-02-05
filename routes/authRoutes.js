@@ -19,7 +19,7 @@ module.exports = function(app) {
 
   app.get("/logout", function(req, res) {
     req.logout();
-    return res.redirect("/");
+    return res.json("You are logged out!");
   });
   app.get("/profile/", isAuthenticated, function(req, res) {
     if (req.user) {
