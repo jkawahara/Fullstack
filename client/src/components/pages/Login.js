@@ -32,9 +32,14 @@ class Login extends Component {
       })
         .then((res) => {
           console.log(res.data);
+          if (res.data){
+            window.location.replace(res.data);
+          }
           this.setState({ user: res.data, email: "", password: "", fireRedirect: true });
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log(err)
+        // window.location.replace("signup") was trying a janky way to get to sign up if login fails
+        );
     }
   };
 

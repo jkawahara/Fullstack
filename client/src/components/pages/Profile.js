@@ -12,48 +12,38 @@ class Profile extends React.Component {
     lessons: ""
   };
 
-  // componentWillMount() {
-  //   this.unlisten = this.props.history.listen((location, action) => {
-  //     console.log("on route change");
-
-  //     //need a route to get user info based on req.user
-  //     // axios.get("/api/userprofile")
-
-// Needs: Lessons
-
 componentDidMount() {
-  // ID: IS HARD CODED FOR US
-  axios.get("/api/users/2")
+  var profileNum = window.location.pathname.split("/").pop();
+  var thisUserClass
+  axios.get("/profile/" + profileNum)
   .then(res => {
     console.log("we need req.user from passport to know which profile page to send user to, also to load this user's data")
-    console.log(res.data.userPhotoUrl)
-    this.setState({ userPhotoUrl: res.data.userPhotoUrl, name: res.data.name })
-  })
-  axios.get("/api/classes/1")
-  .then(res => {
-    console.log(res.data.name)
-    this.setState({ class: res.data.name })
-  })
-  axios.get("/api/thisUserLessons/1")
-  .then(res => {
     console.log(res.data)
-    let lessonsArray = [];
-    for (let i = 0; i < res.data.Lessons.length; i++) {
-      lessonsArray.push(
-      <li>
-        <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].name}</a>
-      </li>)
+    console.log(res.data.ClassId)
+    if (!res.data){
+      alert("You must log in to view your profile")
     }
-    this.setState({ lessons: lessonsArray })
+    else {
+      thisUserClass = res.data.ClassId
+    }
+    this.setState({ userPhotoUrl: res.data.userPhotoUrl, name: res.data.name })
+  }).then(() => {
+    console.log(thisUserClass)
+    axios.get("/profile/class/" + thisUserClass)
+    .then(res => {
+      console.log(res.data)
+      let lessonsArray = [];
+      for (let i = 0; i < res.data.Lessons.length; i++) {
+        lessonsArray.push(
+        <li>
+          <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].name}</a>
+        </li>)
+      }
+      console.log(res.data.name)
+      this.setState({ class: res.data.name, lessons: lessonsArray })
+    })
   })
 }
-
-  //       })
-  //   });
-  // }
-  // componentWillUnmount() {
-  //   this.unlisten();
-  // }
 
   render() {
     return (
