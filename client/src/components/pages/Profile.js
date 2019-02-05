@@ -21,8 +21,8 @@ class Profile extends React.Component {
 // Needs: Lessons
 
 componentDidMount() {
-  // ID: 1 IS HARD CODED FOR US
-  axios.get("/api/users/3")
+  // ID: IS HARD CODED FOR US
+  axios.get("/api/users/2")
   .then(res => {
     console.log("we need req.user from passport to know which profile page to send user to, also to load this user's data")
     console.log(res.data.userPhotoUrl)
@@ -38,7 +38,10 @@ componentDidMount() {
     console.log(res.data)
     let lessonsArray = [];
     for (let i = 0; i < res.data.Lessons.length; i++) {
-      lessonsArray.push(<li>{res.data.Lessons[i].name}</li>)
+      lessonsArray.push(
+      <li>
+        <a href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].name}</a>
+      </li>)
     }
     this.setState({ lessons: lessonsArray })
   })

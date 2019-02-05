@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./navStyle.css"
+import "./navStyle.css";
+import "../assets/images/fullStackLogoNew.png";
 import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBBtn, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink } from "mdbreact";
+
+let logo = "../assets/images/fullStackLogoNew.png"
 
 function NavTabs() {
   return (
@@ -10,6 +13,7 @@ function NavTabs() {
       dark
       expand="md"
       scrolling
+      className="marBot"
     >
       <MDBNavbarBrand>
         <MDBNavLink to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
@@ -22,7 +26,7 @@ function NavTabs() {
               Lessons
             </MDBDropdownToggle>
             <MDBDropdownMenu>
-              <ul>
+              <ul className="list-unstyled">
                 <li className="dropdown-submenu">
                   <a className="dropdown-item" tabIndex="-1" href="#">React Lessons</a>
                   <ul className="dropdown-menu">
