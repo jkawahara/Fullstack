@@ -13,10 +13,12 @@ class Login extends React.Component {
   };
   
   // Loads user profile and sets to this.state.user
-  loadUser = () => {
-    API.getUser()
+  loadProfile = () => {
+    API.getProfile({
+      email: this.state.email
+    })
       .then(res => {
-        this.setState({ user: res.data, email: "", password: "" })
+        this.setState({ user: res.data, email: "", password: "" });
       })
       .catch(err => console.log(err));
     };
@@ -38,7 +40,7 @@ class Login extends React.Component {
         password: this.state.password
       })
         .then(() => {
-          this.loadUser();
+          this.loadProfile();
         })
         .catch(err => console.log(err));
     }

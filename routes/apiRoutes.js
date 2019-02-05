@@ -40,6 +40,9 @@ router.route("/users/:id")
   .put(usersController.update)
   .delete(usersController.delete);
 
+router.route("/profile")
+  .get(usersController.findOneEmail)
+
 router.route("/login")
   .post(passport.authenticate("local"), (req, res) => {
     console.log(req);
@@ -47,7 +50,7 @@ router.route("/login")
   })
   .get(isAuthenticated, (req, res) => {
     if (req.user) {
-      res.redirect("/profile/" + req.user.id)
+      res.redirect("/api/profile/" + req.user.id)
     }
     res.redirect("api/signup");
   })
