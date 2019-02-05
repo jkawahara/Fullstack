@@ -9,7 +9,7 @@ VALUES
 INSERT INTO Users(userPhotoUrl, name, email, password, ClassId)
 VALUES
   ('https://media.licdn.com/dms/image/C5603AQG6oIzYU0_C9w/profile-displayphoto-shrink_800_800/0?e=1554336000&v=beta&t=G7leRd5ZWrh5pOIhEt1tJbVb27DZdpdclf44XooZKX8', 'Orion Abrams', 'orion@orion.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 1), 
-  ('https://media.licdn.com/dms/image/C5603AQFYvsPCK8iMSw/profile-displayphoto-shrink_800_800/0?e=1554336000&v=beta&t=MpFnApnlt9rvQzR1mCg_CUkLE8liqGinQSmd8EyZ_D8', 'Jarren Patao', 'jaren@jaren.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 1),
+  ('https://media.licdn.com/dms/image/C5603AQFYvsPCK8iMSw/profile-displayphoto-shrink_800_800/0?e=1554336000&v=beta&t=MpFnApnlt9rvQzR1mCg_CUkLE8liqGinQSmd8EyZ_D8', 'Jarren Patao', 'jarren@jarren.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 1),
   ('https://media.licdn.com/dms/image/C5603AQHYUlcdtSjAIQ/profile-displayphoto-shrink_800_800/0?e=1554336000&v=beta&t=8CctkU5G6inxEk0Ej5RQgBxsWP8xf44JN3Ruh_w0PV0', 'Jason Villaluz', 'jason@jason.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 1),
   ('https://media.licdn.com/dms/image/C5603AQEfxWsIuFICBw/profile-displayphoto-shrink_200_200/0?e=1554336000&v=beta&t=Usn8UAE3KKme2BZmeNZmyEXWEPqkTexk0PDH7Tv0pWA', 'John Kawahara', 'john@john.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 1),
   ('https://www.nssi.com/media/wysiwyg/images/2.jpg', 'User5', 'user5@user.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 2),
