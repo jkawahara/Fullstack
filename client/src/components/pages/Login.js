@@ -1,6 +1,6 @@
 // *** Include Modules: npm (react, mdbreact), /utils
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import API from "../../utils/API";
 import { FormInput, FormBtn } from "../FormInput";
@@ -39,7 +39,7 @@ class Login extends Component {
   };
 
   render() {
-    const fireRedirect = this.state; 
+    // const fireRedirect = this.state; 
     return (
       <div>
         <MDBContainer>
