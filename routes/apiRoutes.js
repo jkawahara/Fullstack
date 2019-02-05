@@ -12,10 +12,10 @@ router.route("/lessons")
   .post(lessonsController.create);
 
 router.route("/lesson/react/:id")
-  .get(lessonsController.findOne);
+  .get(lessonsController.findOneLesson);
 
 router.route("/lessons/:id")
-  .get(lessonsController.findById)
+  .get(lessonsController.findOneId)
   .put(lessonsController.update)
   .delete(lessonsController.delete);
 
@@ -27,7 +27,7 @@ router.route("/classes")
   .post(classesController.create);
 
 router.route("/classes/:id")
-  .get(classesController.findById)
+  .get(classesController.findOne)
   .put(classesController.update)
   .delete(classesController.delete);
 
@@ -36,17 +36,18 @@ router.route("/users")
   .post(usersController.create);
 
 router.route("/users/:id")
-  .get(usersController.findById)
+  .get(usersController.findOne)
   .put(usersController.update)
   .delete(usersController.delete);
 
 router.route("/login")
   .post(passport.authenticate("local"), (req, res) => {
-    res.json("/api/profile")
+    console.log(req);
+    res.json("/api/login")
   })
   .get(isAuthenticated, (req, res) => {
     if (req.user) {
-      res.redirect("/api/profile/" + req.user.id)
+      res.redirect("/profile/" + req.user.id)
     }
     res.redirect("api/signup");
   })
