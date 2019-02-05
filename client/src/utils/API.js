@@ -8,8 +8,8 @@ export default {
     return axios.get("/api/login", userData);
   },
   // Gets user with the given id
-  getUser: function(id) {
-    return axios.get("/api/users/" + id);
+  getUser: function(userEmail) {
+    return axios.get("/api/users/", userEmail);
   },
   // Saves user to the database
   saveUser: function(userData) {
