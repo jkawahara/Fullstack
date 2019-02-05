@@ -7,6 +7,14 @@ module.exports = function (sequelize, DataTypes) {
         len: [1]
       }
     },
+    frontEndName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "Add a lesson name",
+      validate: {
+        len: [1]
+      }
+    },
     lessonUrl: {
       type: DataTypes.STRING,
       allowNull: true,

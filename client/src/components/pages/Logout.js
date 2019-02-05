@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
+import { MDBContainer} from "mdbreact";
 import "./style.css";
 
 class Logout extends React.Component {

@@ -47,7 +47,7 @@ class Profile extends React.Component {
             for (let i = 0; i < res.data.Lessons.length; i++) {
               lessonsArray.push(
                 <li>
-                  <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].name}</a>
+                  <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].frontEndName}</a>
                 </li>)
             }
           }
@@ -62,11 +62,13 @@ class Profile extends React.Component {
         <MDBContainer>
           <h2>Welcome, {this.state.name}</h2>
           <div right>
-            <Link to="/logout" className={window.location.pathname === "/logout" ? "nav-link active" : "nav-link"}>
-              <MDBBtn className="peach-gradient">
+
+            <Link to="/logout">
+            <MDBBtn className="peach-gradient">
                 Logout
-            </MDBBtn>
+                </MDBBtn>
             </Link>
+          
           </div>
           <MDBContainer>
             <MDBRow>
