@@ -24,7 +24,10 @@ class Profile extends React.Component {
     axios.get("/profile")
     .then(res => {
       console.log(res.data)
-      if (res.data.isAdmin){
+      if (typeof res.data !== 'object'){
+        alert("Must sign in first!")
+      }
+      else if (res.data.isAdmin){
         profileNum = currentProfile
       }
       else {
@@ -40,12 +43,14 @@ class Profile extends React.Component {
           .then(res => {
             console.log(res.data)
             let lessonsArray = [];
+            if (typeof res.data === 'object'){
             for (let i = 0; i < res.data.Lessons.length; i++) {
               lessonsArray.push(
                 <li>
                   <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].name}</a>
                 </li>)
             }
+          }
             this.setState({ class: res.data.name, lessons: lessonsArray })
           })
       }))
@@ -57,7 +62,7 @@ class Profile extends React.Component {
         <MDBContainer>
           <h2>Welcome, {this.state.name}</h2>
           <div right>
-            <Link to="/" className={window.location.pathname === "/logout" ? "nav-link active" : "nav-link"}>
+            <Link to="/logout" className={window.location.pathname === "/logout" ? "nav-link active" : "nav-link"}>
               <MDBBtn className="peach-gradient">
                 Logout
             </MDBBtn>

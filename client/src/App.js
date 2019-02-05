@@ -6,8 +6,9 @@ import Lesson from "./components/pages/Lesson"
 import NoMatch from "./components/pages/NoMatch";
 import SignUp from "./components/pages/SignUp";
 import Login from "./components/pages/Login";
-import Profile from "./components/pages/Profile"
-import "./components/pages/style.css"
+import Logout from "./components/pages/Logout";
+import Profile from "./components/pages/Profile";
+import "./components/pages/style.css";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/logout" component={Logout} />
         <Route path="/lessons" component={Lesson} />
         <Route path="/profile" component={Profile} />
         {/* <Route path="/charts" component={Chart} */}
