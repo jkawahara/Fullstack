@@ -1,6 +1,5 @@
 // *** Include Modules: npm (react, mdbreact), /utils
 import React, { Component } from "react";
-// import { Redirect } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import API from "../../utils/API";
 import { FormInput, FormBtn } from "../FormInput";
@@ -11,7 +10,6 @@ class Login extends Component {
     user: {},
     email: "",
     password: "",
-    fireRedirect: false
   };
 
   // Handles updating component state when the user types into the input field
@@ -31,21 +29,21 @@ class Login extends Component {
         password: this.state.password
       })
         .then((res) => {
-          console.log(res.data);
           if (res.data){
             window.location.replace(res.data);
           }
           this.setState({ user: res.data, email: "", password: "", fireRedirect: true });
         })
-        .catch(err => console.log(err),
-        // doesn't auto redirect to sign up page, but at least lets error know that email/password not in DB
-        alert("Sign in credentials invalid")
-        );
+        .catch(err => {
+          console.log(err);
+          if (err) {
+            alert("Sign in credentials invalid");
+          }
+        });
     }
   };
 
   render() {
-    // const fireRedirect = this.state; 
     return (
       <div>
         <MDBContainer>
@@ -74,9 +72,6 @@ class Login extends Component {
                   Login
                 </FormBtn>
               </form>
-              {/* { fireRedirect && (
-                <Redirect to={"/profile"}/>
-              )} */}
             </MDBCol>
             <MDBCol md="4">{/* Grid Spacer */}</MDBCol>
           </MDBRow>
