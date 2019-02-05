@@ -68,9 +68,9 @@ class Login extends Component {
                   Login
                 </FormBtn>
               </form>
-              {/* { fireRedirect && (
+              { fireRedirect && (
                 <Redirect to={"/profile"}/>
-              )} */}
+              )}
             </MDBCol>
             <MDBCol md="4">{/* Grid Spacer */}</MDBCol>
           </MDBRow>

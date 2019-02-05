@@ -29,7 +29,7 @@ function NavTabs() {
             <MDBDropdownMenu>
               <ul className="list-unstyled">
                 <li className="dropdown-submenu">
-                  <a className="dropdown-item" tabIndex="-1" href="/lessons/">React Lessons</a>
+                  <a className="dropdown-item" tabIndex="-1" href="/lessons/react/1">React Lessons</a>
                   <ul className="dropdown-menu">
                     <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/react/1">Lesson 1 - State</Link></li>
                     <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/react/2">Lesson 2 - Props</Link></li>
@@ -39,7 +39,7 @@ function NavTabs() {
               </ul>
               <ul className="list-unstyled">
                 <li className="dropdown-submenu">
-                  <a className="dropdown-item" tabIndex="-1" href="#">Jquery Lessons</a>
+                  <a className="dropdown-item" tabIndex="-1" href="/lessons/jquery/4">Jquery Lessons</a>
                   <ul className="dropdown-menu">
                     <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/4">Lesson 4 - Fridge Game</Link></li>
                     <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/5">Lesson 5 - Calculator</Link></li>

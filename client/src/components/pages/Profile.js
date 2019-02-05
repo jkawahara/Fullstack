@@ -70,7 +70,7 @@ componentDidMount() {
           <MDBContainer>
             <MDBRow>
               <MDBCol md="6">
-                <img alt="My Image" className="smallPic" src={this.state.userPhotoUrl} />
+                <img alt="Profile Pic" className="smallPic" src={this.state.userPhotoUrl} />
               </MDBCol>
               <MDBCol md="6">
                 <h3>

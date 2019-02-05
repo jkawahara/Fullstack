@@ -42,7 +42,7 @@ render() {
       <MDBRow>
         <MDBCol md="4"></MDBCol>
         <MDBCol md="4">
-          <form className="form"> //for comp
+          <form className="form"> {/* //for comp */}
             <div className="form-group">
               <input size="30" name="name" className="form-control" placeholder="Your Name" value={this.state.name} onChange={this.handleInputChange} />
             </div>
