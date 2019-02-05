@@ -71,6 +71,7 @@ class Login extends React.Component {
                   placeholder="Your password"
                 />
                 <FormBtn
+                  disabled={!(this.state.email && this.state.password)}
                   onClick={this.handleLoginSubmit}
                 >
                   Login
