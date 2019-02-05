@@ -2,12 +2,14 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import API from "../../utils/API.js";
+import { Redirect } from "react-router-dom";
 
 class SignUp extends React.Component {
   state = {
     name: "",
     email: "",
-    password: ""
+    password: "",
+    redirect: false
   };
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -23,17 +25,31 @@ class SignUp extends React.Component {
       email: this.state.email,
       password: this.state.password,
       class: this.state.class
-    }).then(() => { 
+    }).then((res) => {
       this.setState({
         name: "",
         email: "",
         password: "",
-        class: ""
-      })
+        class: "",
+      });
+      this.setRedirect();
+      this.renderRedirect();
     })
   };
 
-  render() { 
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to="/login" />
+    }
+  }
+
+  render() {
     return (
       <div >
         <MDBContainer>
@@ -61,6 +77,7 @@ class SignUp extends React.Component {
                 <button onClick={this.handleFormSubmit} type="submit" className="btn btn-lg btn-danger float-right">
                   Sign Up
                 </button>
+                { this.renderRedirect() }
               </form>
             </MDBCol>
             <MDBCol md="4"></MDBCol>
