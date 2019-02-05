@@ -15,7 +15,12 @@ class Profile extends React.Component {
 
   componentDidMount() {
     var thisUserClass
-    var currentProfile = window.location.pathname.split("/").pop();
+    var currentProfile = parseInt(window.location.pathname.split("/").pop());
+    console.log(currentProfile)
+    if (!currentProfile){
+      currentProfile= 1
+      console.log(currentProfile)
+    }
     axios.get("/profile")
     .then(res => {
       console.log(res.data)
