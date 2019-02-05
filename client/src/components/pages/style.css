@@ -1,15 +1,16 @@
-nav {
-  margin-bottom: 5%;
-}
-
 p {
   text-align: center;
 }
 
 .smallPic {
-  max-width: 20%;
+  max-width: 40%;
   max-height: 200px;
   border-radius: 6px;
+}
+
+.maxHeight {
+  max-height: 100vh;
+  max-width: 100%;
 }
 
 /* ------------------------ Possible Stuff ------------------------ */

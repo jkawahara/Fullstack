@@ -1,19 +1,17 @@
+// *** Include Modules: npm (axios)
 import axios from "axios";
 
+// Export axios GET, POST
 export default {
-  // Gets books from the Google API
-  // getBooks: function(q) {
-  //   return axios.get("/api/google", { params: { q: "title:" + q } });
-  // },
-  // // Gets all saved books
-  // getSavedBooks: function() {
-  //   return axios.get("/api/books");
-  // },
-  // // Deletes the saved book with the given id
-  // deleteBook: function(id) {
-  //   return axios.delete("/api/books/" + id);
-  // },
-  // Saves an book to the database
+  // Login user with the given id
+  loginUser: function(userData) {
+    return axios.post("/api/login", userData);
+  },
+  // Gets user with the given id
+  getProfile: function(userId) {
+    return axios.get("/profile/" + userId);
+  },
+  // Saves user to the database
   saveUser: function(userData) {
     return axios.post("/api/users", userData);
   }
