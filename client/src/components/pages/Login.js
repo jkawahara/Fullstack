@@ -31,7 +31,6 @@ class Login extends Component {
         password: this.state.password
       })
         .then((res) => {
-          console.log(res)
           if (res.data){
             window.location.replace(res.data);
           }
