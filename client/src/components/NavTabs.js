@@ -39,11 +39,11 @@ function NavTabs() {
               </ul>
               <ul className="list-unstyled">
                 <li className="dropdown-submenu">
-                  <a className="dropdown-item" tabIndex="-1" href="/lessons/">Mongo Lessons</a>
+                  <a className="dropdown-item" tabIndex="-1" href="#">Jquery Lessons</a>
                   <ul className="dropdown-menu">
-                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/mongo/4">Lesson 4 - Create</Link></li>
-                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/mongo/5">Lesson 5 - Delete</Link></li>
-                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/mongo/6">Lesson 6 - Update</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/4">Lesson 4 - Fridge Game</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/5">Lesson 5 - Calculator</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/6">Lesson 6 - Timeouts</Link></li>
                   </ul>
                 </li>
               </ul>
