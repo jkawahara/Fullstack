@@ -1,32 +1,18 @@
 // *** Include Modules: npm (react, mdbreact), /utils
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import API from "../../utils/API";
 import { FormInput, FormBtn } from "../FormInput";
 import "./style.css";
 
-class Login extends React.Component {
+class Login extends Component {
   state = {
     user: {},
     email: "",
     password: "",
+    fireRedirect: false
   };
-  
-  // When the component mounts, load user profile
-  // componentDidMount() {
-  //   this.loadProfile();
-  // }
-
-  // Loads user profile and sets to this.state.user
-  // loadProfile = () => {
-  //   API.getProfile({
-  //     email: this.state.email
-  //   })
-  //     .then(res => {
-  //       this.setState({ user: res.data, email: "", password: "" });
-  //     })
-  //     .catch(err => console.log(err));
-  //   };
 
   // Handles updating component state when the user types into the input field
   handleInputChange = event => {
@@ -36,7 +22,7 @@ class Login extends React.Component {
     });
   };
 
-  // Handles login
+  // Handles login via Passport
   handleLoginSubmit = event => {
     event.preventDefault();
     if (this.state.email && this.state.password) {
@@ -45,14 +31,15 @@ class Login extends React.Component {
         password: this.state.password
       })
         .then((res) => {
-          // Need to figure out proper structure to redirect to profile
-          window.location.replace(res);
+          console.log(res.data);
+          this.setState({ user: res.data, email: "", password: "", fireRedirect: true });
         })
         .catch(err => console.log(err));
     }
   };
 
-  render() { 
+  render() {
+    const fireRedirect = this.state; 
     return (
       <div>
         <MDBContainer>
@@ -81,9 +68,9 @@ class Login extends React.Component {
                   Login
                 </FormBtn>
               </form>
-              {/* <hr />
-              <p>or login with Google</p>
-              <div className="nav-item g-signin2 center" data-onsuccess="onSignIn"></div> */}
+              {/* { fireRedirect && (
+                <Redirect to={"/profile"}/>
+              )} */}
             </MDBCol>
             <MDBCol md="4">{/* Grid Spacer */}</MDBCol>
           </MDBRow>

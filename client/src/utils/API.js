@@ -5,11 +5,11 @@ import axios from "axios";
 export default {
   // Login user with the given id
   loginUser: function(userData) {
-    return axios.get("/api/login", userData);
+    return axios.post("/api/login", userData);
   },
   // Gets user with the given id
-  getProfile: function(userEmail) {
-    return axios.get("/api/profile", userEmail);
+  getProfile: function(userId) {
+    return axios.get("/profile/" + userId);
   },
   // Saves user to the database
   saveUser: function(userData) {
