@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import { Link } from "react-router-dom";
+import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import "./style.css";
 
 class Profile extends React.Component {
@@ -59,6 +60,13 @@ componentDidMount() {
       <div>
         <MDBContainer>
           <h2>Welcome, {this.state.name}</h2>
+          <div right>
+          <Link to="/" className={window.location.pathname === "/logout" ? "nav-link active" : "nav-link"}>
+            <MDBBtn className="peach-gradient">
+              Logout
+            </MDBBtn>
+          </Link>
+          </div>
           <MDBContainer>
             <MDBRow>
               <MDBCol md="6">
@@ -74,6 +82,7 @@ componentDidMount() {
               </MDBCol>
             </MDBRow>
           </MDBContainer>
+
         </MDBContainer>
       </div>
     );
