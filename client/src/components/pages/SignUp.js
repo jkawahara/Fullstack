@@ -22,12 +22,14 @@ handleInputChange = event => {
       API.saveUser({
         name: this.state.name,
         email: this.state.email,
-        password: this.state.password
+        password: this.state.password,
+        class: this.state.class
       }).then(() => { 
         this.setState({
           name: "",
           email: "",
-          password: ""
+          password: "",
+          class: ""
         })
       })
   
@@ -51,6 +53,14 @@ render() {
             </div>
             <div className="form-group">
               <input size="30" name="password" className="form-control" placeholder="Your password" value={this.state.password} onChange={this.handleInputChange} />
+            </div>
+            <div className="form-group">
+            <select className="browser-default custom-select">
+              <option>-- Choose your class --</option>
+              <option value="1">UCB</option>
+              <option value="2">Bootcamp2</option>
+              <option value="3">Bootcamp3</option>
+            </select>
             </div>
             <button onClick={this.handleFormSubmit} type="submit" className="btn btn-lg btn-danger float-right">
               Sign Up
