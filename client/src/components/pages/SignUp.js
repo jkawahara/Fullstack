@@ -3,6 +3,7 @@ import React from "react";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import API from "../../utils/API.js";
 import { Redirect } from "react-router-dom";
+import Footer from "../Footer";
 
 class SignUp extends React.Component {
   state = {
@@ -89,6 +90,7 @@ class SignUp extends React.Component {
             </MDBCol>
             <MDBCol md="4"></MDBCol>
           </MDBRow>
+          <Footer />
         </MDBContainer>
       </div>
     );
