@@ -17,8 +17,8 @@ VALUES
   ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNMPR0hpm269vpL4p3LB-tHvVOfyen9TEXbEODDY4NAHO8v6Cg', 'User7', 'user7@user.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 0, 0, 3),
   ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHjJ_86Tjsc6t7aovg7nTEP_BqAwfMNilivmlLkgoKQccgUBt-', 'User8', 'user8@user.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 0, 0, 3),
   ('https://media.licdn.com/dms/image/C5603AQG5-OfzBXRM-A/profile-displayphoto-shrink_100_100/0?e=1554940800&v=beta&t=sk78BGYN1cgqn-dRXz4gksE_4kbJSpgtj7aY0Q05jHg', 'David Hallinan', 'david@david.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 1, 0, 1),
-  ('https://media.licdn.com/dms/image/C5603AQGb2w2LrjZX4A/profile-displayphoto-shrink_800_800/0?e=1554940800&v=beta&t=OP2D6n4qy0Vmh8Or5YxwlTb4JTNlYZ5i16NxbKPFwYU', 'Glo Austin', 'glo@glo.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 1, 0, 1),
-  ('https://media.licdn.com/dms/image/C4D03AQHtCZ7KvfIPRg/profile-displayphoto-shrink_800_800/0?e=1554940800&v=beta&t=A0JX-biWLvvUk_QEEelPqxkslYKH_qca37khgEbkG0w', 'Hannah Bowers', 'hannah@hannah.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 1, 0, 1);
+  ('https://media.licdn.com/dms/image/C5603AQGb2w2LrjZX4A/profile-displayphoto-shrink_800_800/0?e=1554940800&v=beta&t=OP2D6n4qy0Vmh8Or5YxwlTb4JTNlYZ5i16NxbKPFwYU', 'Glo Austin', 'glo@glo.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 1, 0, 2),
+  ('https://media.licdn.com/dms/image/C4D03AQHtCZ7KvfIPRg/profile-displayphoto-shrink_800_800/0?e=1554940800&v=beta&t=A0JX-biWLvvUk_QEEelPqxkslYKH_qca37khgEbkG0w', 'Hannah Bowers', 'hannah@hannah.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 1, 0, 3);
 
 INSERT INTO Lessons (name, frontEndName, lessonUrl, original, ClassId) 
 VALUES

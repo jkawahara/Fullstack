@@ -20,10 +20,8 @@ class Profile extends React.Component {
     needMentor: false,
     usersInClass: ""
   };
-  
 
   componentDidMount() {
-
     let thisUserClass;
     let currentProfile = parseInt(window.location.pathname.split("/").pop());
     axios.get("/profile")
@@ -63,10 +61,21 @@ class Profile extends React.Component {
                 let usersArray = [];
                 if (typeof res.data === 'object') {
                   for (let i = 0; i < res.data.Lessons.length; i++) {
-                    lessonsArray.push(
-                      <li>
-                        <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].frontEndName}</a>
-                      </li>)
+                    if (this.state.isAdmin && !res.data.Lessons[i].original) {
+                      lessonsArray.push(
+                        <li>
+                          <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].frontEndName}</a>
+                          <button onClick={this.handleDeleteSubmit.bind(this, res.data.Lessons[i].id)} data-id={res.data.Lessons[i].id} className="btn btn-primary btn-sm text-white">
+                            Delete
+                          </button>
+                        </li>)
+                    } else {
+                      lessonsArray.push(
+                        <li>
+                          <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].frontEndName}</a>
+                        </li>
+                      )
+                    }
                   }
                   if (this.state.isAdmin) {
                     usersArray.push(res.data.Users)
@@ -77,6 +86,14 @@ class Profile extends React.Component {
             this.usersNeedMentor();
           }))
   }
+
+  // Deletes a lesson if it's not an original one
+  handleDeleteSubmit = (id, event) => {
+    console.log(id);
+    API.deleteLesson(id)
+      .then(res => this.loadLessons())
+      .catch(err => console.log(err));
+  };  
 
   // Get users that need mentor
   usersNeedMentor = () => {
@@ -158,7 +175,6 @@ class Profile extends React.Component {
                 <h5>
                   Lessons: {this.state.lessons}
                 </h5>
-                
               </MDBCol>
               {this.state.isAdmin ? (
                 <MDBCol md="3">
