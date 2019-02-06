@@ -1,5 +1,16 @@
+#root {
+  background-color: #777;
+}
 nav {
   height: 80px;
+}
+canvas {
+  border-radius: 10px;
+  background-color: #FFF;
+}
+
+footer {
+  background-color: #777;
 }
 .marBot {
   margin-bottom: 23px;
@@ -9,16 +20,15 @@ nav {
   background: -o-linear-gradient(50deg,#ffbc58,#ff3030)!important;
   background: linear-gradient(40deg,#ffbc58,#ff3030)!important
 }
+.btn-default, .btn-secondary {
+  background-color: unset;
+}
 .bluey {
   background: -webkit-linear-gradient(50deg,#1ef1e7,#00066B)!important;
   background: -o-linear-gradient(50deg,#1ef1e7,#00066B)!important;
   background: linear-gradient(40deg,#1ef1e7,#00066B)!important
 }
-canvas {
-  border-radius: 10px;
-  background-color: rgb(255, 255, 255);
-  height: 80%;
-}
+
 
 /* ----------------------- Drop Down ----------------------- */
 .dropdown-submenu {
