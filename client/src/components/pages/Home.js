@@ -32,7 +32,7 @@ function Home() {
           </MDBContainer>
         </MDBCol>
         {/* Body */}
-        <MDBCol md="8">
+        <MDBCol sm="8">
           <MDBCard color="unique-color-dark" text="white" className="text-center">
             <MDBCardBody>
               <p>
@@ -57,15 +57,6 @@ function Home() {
           </MDBCard>
         </MDBCol>
       </MDBRow>
-      {/* // Parallax scroll */}
-    
-    
-      <section>
-        <div className="title">
-          <h1>This could be the title to this section</h1>
-          <h3>subtitle : </h3>
-        </div>
-      </section>
     </MDBContainer>
     
     
