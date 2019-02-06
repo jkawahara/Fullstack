@@ -14,17 +14,14 @@ class Profile extends React.Component {
     class: "",
     lessons: "",
     users: [],
-    lessons: "",
     isAdmin: false
   };
 
   componentDidMount() {
     let thisUserClass;
     let currentProfile = parseInt(window.location.pathname.split("/").pop());
-    console.log(currentProfile)
     axios.get("/profile")
       .then(res => {
-        console.log(res.data)
         this.setState({
           isAdmin: res.data.isAdmin
         })
@@ -32,11 +29,15 @@ class Profile extends React.Component {
           alert("Must sign in first!")
         }
         else if (res.data.isAdmin && !currentProfile) {
-          this.state.isAdmin = true
+          this.setState({
+            isAdmin: true
+          })
           profileNum = res.data.id
         }
         else if (res.data.isAdmin){
-          this.state.isAdmin = true
+          this.setState({
+            isAdmin: true
+          })
           profileNum = currentProfile
         }
         else {
@@ -50,7 +51,6 @@ class Profile extends React.Component {
           }).then(() => {
             axios.get("/profile/class/" + thisUserClass)
               .then(res => {
-                console.log(res.data)
                 let lessonsArray = [];
                 if (typeof res.data === 'object') {
                   for (let i = 0; i < res.data.Lessons.length; i++) {
@@ -70,14 +70,12 @@ class Profile extends React.Component {
   usersNeedMentor = () => {
     API.getUsers()
       .then((res) => {
-        console.log(res.data);
         const needMentor = [];
-        res.data.map((user, index) => {
+        res.data.map(user => {
           if (user.needMentor) {
             needMentor.push(user);
-          }  
+          }
         })
-        console.log(needMentor);
         this.setState({
           users: needMentor
         });
