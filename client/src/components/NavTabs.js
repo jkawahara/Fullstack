@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 // import { Logo } from "/pages\/assets/images/fullStackLogoNew.png";
-import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBBtn, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink } from "mdbreact";
+import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBBtn, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink } from "mdbreact";
 
 function NavTabs() {
   return (
@@ -27,7 +27,7 @@ function NavTabs() {
               Lessons
             </MDBDropdownToggle>
             <MDBDropdownMenu>
-              <ul className="list-unstyled">
+              <MDBDropdownItem>
                 <li className="dropdown-submenu">
                   <a className="dropdown-item" tabIndex="-1" href="/lessons/react/1">React Lessons</a>
                   <ul className="dropdown-menu">
@@ -36,17 +36,17 @@ function NavTabs() {
                     <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/react/3">Lesson 3 - Forms</Link></li>
                   </ul>
                 </li>
-              </ul>
-              <ul className="list-unstyled">
+              </MDBDropdownItem>
+              <MDBDropdownItem>
                 <li className="dropdown-submenu">
-                  <a className="dropdown-item" tabIndex="-1" href="/lessons/jquery/4">Jquery Lessons</a>
+                  <a className="dropdown-item" tabIndex="-1" href="/lessons/react/1">React Lessons</a>
                   <ul className="dropdown-menu">
-                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/4">Lesson 4 - Fridge Game</Link></li>
-                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/5">Lesson 5 - Calculator</Link></li>
-                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/6">Lesson 6 - Timeouts</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/react/1">Lesson 1 - State</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/react/2">Lesson 2 - Props</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/react/3">Lesson 3 - Forms</Link></li>
                   </ul>
                 </li>
-              </ul>
+              </MDBDropdownItem>
             </MDBDropdownMenu>
           </MDBDropdown>
           </MDBNavItem>
