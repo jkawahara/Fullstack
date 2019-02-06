@@ -51,7 +51,21 @@ function NavTabs() {
           </MDBDropdown>
           </MDBNavItem>
         <MDBNavbarNav right>
-        
+        <MDBNavItem>
+          <MDBDropdown>
+            <MDBDropdownToggle className="bluey">
+            <Link to="#" className={window.location.pathname === "/charts" ? "nav-link active" : "nav-link"}>Charts</Link>  
+            </MDBDropdownToggle>
+            <MDBDropdownMenu>
+              <MDBDropdownItem href="/chart">
+               Classes Taken
+              </MDBDropdownItem>
+               <MDBDropdownItem href="/chartreg">
+                Classes Region
+               </MDBDropdownItem>
+            </MDBDropdownMenu> 
+          </MDBDropdown>  
+          </MDBNavItem>    
         <MDBNavItem>
           <Link to="/profile" className={window.location.pathname === "/profile" ? "nav-link active" : "nav-link"}>
             <MDBBtn className="bluey">Profile</MDBBtn>
