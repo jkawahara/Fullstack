@@ -74,7 +74,7 @@ class Profile extends React.Component {
         const needMentor = [];
         res.data.map((user, index) => {
           if (user.needMentor) {
-            needMentor[index] = user;
+            needMentor.push(user);
           }  
         })
         console.log(needMentor);
