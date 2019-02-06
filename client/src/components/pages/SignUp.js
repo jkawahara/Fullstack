@@ -9,7 +9,8 @@ class SignUp extends React.Component {
     name: "",
     email: "",
     password: "",
-    class: "",
+    ClassId: "",
+    userPhotoUrl: "",
     redirect: false
   };
   handleInputChange = event => {
