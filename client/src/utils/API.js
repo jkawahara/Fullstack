@@ -20,8 +20,8 @@ export default {
     return axios.get("/api/users");
   },
   // Update user to get mentor
-  updateUser: function(userId) {
-    return axios.put("/api/users/" + userId);
+  updateUser: function(userData) {
+    return axios.put("/api/users/" + userData.id, userData);
   },
   // Saves lesson to the database
   saveLesson: function(userData) {
