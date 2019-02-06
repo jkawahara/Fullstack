@@ -94,7 +94,15 @@ class Profile extends React.Component {
       .then(res => this.componentDidMount())
       .catch(err => console.log(err));
   };  
-
+  getData = () => {
+    API.getUsers()
+      .then((res) => {
+        this.componentDidMount()
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
   // Get users that need mentor
   usersNeedMentor = () => {
     API.getUsers()
@@ -158,7 +166,7 @@ class Profile extends React.Component {
                       <ul>
                         {this.state.usersInClass[0].map(user => (
                           <li>
-                          <a href={"profile/" + user.id}> {user.name} </a>
+                          <Link onClick={this.getData} to={"/profile/" + user.id}> {user.name} </Link>
                           </li>
                         ))}
                       </ul>
