@@ -107,12 +107,12 @@ class Profile extends React.Component {
           <h2>Welcome, {this.state.name}</h2>
           <div right>
             <Link to="/logout">
-              <MDBBtn className="peach-gradient">
+              <MDBBtn className="peachy">
                 Logout
               </MDBBtn>
             </Link>
             <Link to="/addLesson">
-            {this.state.isAdmin ?  <MDBBtn className="peach-gradient"> Add Lesson </MDBBtn>: null}
+            {this.state.isAdmin ?  <MDBBtn className="peachy"> Add Lesson </MDBBtn>: null}
             </Link>
           </div>
           <MDBContainer>
@@ -142,10 +142,13 @@ class Profile extends React.Component {
                     )}
                 </MDBCol>
               ) : (
-                <MDBBtn onClick={this.handleGetMentor} className="peach-gradient">
-                  Click for a mentor!
-                </MDBBtn>
+                <MDBCol>
+                  <MDBBtn onClick={this.handleGetMentor} className="peachy">
+                    Click for a mentor!
+                  </MDBBtn>
+                </MDBCol>
               )}
+              
             </MDBRow>
           </MDBContainer>
         </MDBContainer>
