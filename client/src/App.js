@@ -11,6 +11,7 @@ import AddLesson from "./components/pages/AddLesson"
 import Profile from "./components/pages/Profile";
 import Chart from "./components/pages/Chart";
 import ChartReg from "./components/pages/ChartReg";
+import Contact from "./components/pages/Contact";
 
 import "./components/pages/style.css";
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/addlesson" component={AddLesson} />
         <Route path="/chart" component={Chart} />
         <Route path="/chartreg" component={ChartReg} />
+        <Route path="/contact" component={Contact} />
         <Route component={NoMatch} />
         </Switch>
       </div>
