@@ -22,6 +22,7 @@ class Profile extends React.Component {
   };
 
   componentDidMount() {
+    console.log(this.state)
     let thisUserClass;
     let currentProfile = parseInt(window.location.pathname.split("/").pop());
     axios.get("/profile")
@@ -69,6 +70,7 @@ class Profile extends React.Component {
                             Delete
                           </button>
                         </li>)
+                        
                     } else {
                       lessonsArray.push(
                         <li>
@@ -91,10 +93,18 @@ class Profile extends React.Component {
   handleDeleteSubmit = (id, event) => {
     console.log(id);
     API.deleteLesson(id)
-      .then(res => this.loadLessons())
+      .then(res => this.componentDidMount())
       .catch(err => console.log(err));
   };  
-
+  getData = () => {
+    API.getUsers()
+      .then((res) => {
+        this.componentDidMount()
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
   // Get users that need mentor
   usersNeedMentor = () => {
     API.getUsers()
@@ -158,7 +168,7 @@ class Profile extends React.Component {
                       <ul>
                         {this.state.usersInClass[0].map(user => (
                           <li>
-                          <a href={"profile/" + user.id}> {user.name} </a>
+                          <Link onClick={this.getData} to={"/profile/" + user.id}> {user.name} </Link>
                           </li>
                         ))}
                       </ul>
