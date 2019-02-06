@@ -6,6 +6,9 @@ module.exports = {
       .findAll({
         include: [
             db.Class
+        ],
+        order: [
+          ["id", "ASC"]
         ]
       })
       .then(dbModel => res.json(dbModel))
