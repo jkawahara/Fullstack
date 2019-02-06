@@ -1,6 +1,6 @@
 # [Fullstack](https://fullstack-network.herokuapp.com/)
 ### 1. Why / Background
-  * Fullstack is a web based application that enable users, affiliated with coding boot camps, to organize their curriculum and increase networking engagement.
+  * Fullstack is a web based application that enable users, affiliated with coding boot camps, to organize their curriculum, and increase networking engagement.
  ### 2. What / Objectives / User Stories
   * From design through deployment of the application, this project used the following web development technologies:
     * Server-side: Node.js w/ Express web app framework; MySQL for data persistence w/ Sequelize ORM; Firebase DB for realtime data persistence; Passport for user authentication; WebSocket for 2-way interactive communications across server/client 
