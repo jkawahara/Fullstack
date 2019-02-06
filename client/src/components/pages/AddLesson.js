@@ -53,7 +53,7 @@ class AddLesson extends React.Component {
                   <input size="30" name="frontEndName" className="form-control" placeholder="Full Lesson Name" value={this.state.frontEndName} onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
-                  <input size="30" name="lessonUrl" className="form-control" placeholder="Lesson URL" value={this.state.lessonUrl} onChange={this.handleInputChange} />
+                  <input size="30" name="lessonUrl" className="form-control" placeholder="Full Lesson URL" value={this.state.lessonUrl} onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
                 <select name="ClassId" className="browser-default custom-select" onChange={this.handleInputChange} >
@@ -64,7 +64,7 @@ class AddLesson extends React.Component {
                 </select>
                 </div>
                 <button onClick={this.handleFormSubmit} type="submit" className="btn btn-lg btn-danger float-right">
-                  Sign Up
+                  Add Lesson
                 </button>
               </form>
             </MDBCol>
