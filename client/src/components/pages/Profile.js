@@ -17,17 +17,16 @@ class Profile extends React.Component {
     var thisUserClass
     var currentProfile = parseInt(window.location.pathname.split("/").pop());
     console.log(currentProfile)
-    if (!currentProfile) {
-      currentProfile = 1
-      console.log(currentProfile)
-    }
     axios.get("/profile")
       .then(res => {
         console.log(res.data)
         if (typeof res.data !== 'object') {
           alert("Must sign in first!")
         }
-        else if (res.data.isAdmin) {
+        else if (res.data.isAdmin && !currentProfile) {
+          profileNum = res.data.id
+        }
+        else if (res.data.isAdmin){
           profileNum = currentProfile
         }
         else {
