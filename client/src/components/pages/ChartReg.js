@@ -4,7 +4,7 @@ import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import { Pie } from "react-chartjs-2";
 //import API from "../../utils/API.js";
 import { Redirect } from "react-router-dom";
-
+import Footer from "../Footer";
 
 
   class ChartReg extends React.Component {
@@ -62,6 +62,7 @@ setRedirect = () => {
           </MDBRow>
           <MDBRow>
           </MDBRow> 
+          <Footer />
         </MDBContainer>
       </div>
     );

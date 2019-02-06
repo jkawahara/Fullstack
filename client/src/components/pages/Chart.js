@@ -4,6 +4,7 @@ import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import { Bar } from "react-chartjs-2";
 //import API from "../../utils/API.js";
 import { Redirect } from "react-router-dom";
+import Footer from "../Footer";
 
 
 
@@ -92,6 +93,7 @@ setRedirect = () => {
           </MDBRow>
           <MDBRow>
           </MDBRow> 
+          <Footer />
         </MDBContainer>
       </div>
     );

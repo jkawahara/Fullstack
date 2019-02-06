@@ -5,6 +5,7 @@ import API from "../../utils/API";
 import { FormInput, FormBtn } from "../FormInput";
 import "./style.css";
 import { Redirect } from "react-router-dom";
+import Footer from "../Footer";
 
 class Login extends Component {
   state = {
@@ -77,6 +78,7 @@ class Login extends Component {
             </MDBCol>
             <MDBCol md="4">{/* Grid Spacer */}</MDBCol>
           </MDBRow>
+          <Footer />
         </MDBContainer>
       </div>
     );

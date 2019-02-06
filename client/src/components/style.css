@@ -17,6 +17,10 @@ a {
 .marBot {
   margin-bottom: 23px;
 }
+.marGinz {
+  margin-top: 8px;
+  margin-right: 8px;
+}
 .peachy {
   background: -webkit-linear-gradient(50deg,#ffbc58,#ff3030)!important;
   background: -o-linear-gradient(50deg,#ffbc58,#ff3030)!important;

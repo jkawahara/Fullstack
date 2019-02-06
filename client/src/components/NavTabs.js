@@ -18,8 +18,8 @@ function NavTabs() {
           <MDBBtn className="peachy">Fullstack</MDBBtn>
         </MDBNavLink>
       </MDBNavbarBrand>
-    {/* --------------- Nav Items --------------- */}
-        {/* ------ Lessons Dropdown Button ------ */}
+    {/* ---------------- Nav Items --------------- */}
+        {/* ------- Lessons Dropdown Button ------ */}
         <MDBNavItem>
           <MDBDropdown className="marBot">
             <MDBDropdownToggle className="peachy">
@@ -51,21 +51,24 @@ function NavTabs() {
           </MDBNavItem>
         {/* ------ Right Navigation Buttons ------ */}
         <MDBNavbarNav right>
-        <MDBNavItem>
-          <MDBDropdown>
+        <MDBDropdown className="marGinz">
             <MDBDropdownToggle className="bluey">
-            <Link to="#" className={window.location.pathname === "/charts" ? "nav-link active" : "nav-link"}>Charts</Link>  
+              Charts
             </MDBDropdownToggle>
             <MDBDropdownMenu>
-              <MDBDropdownItem href="/chart">
-               Classes Taken
+              <MDBDropdownItem>
+                <li className="dropdown-submenu">
+                  <a className="dropdown-item" tabIndex="-1" href="/chart">Classes Taken</a>
+                </li>
               </MDBDropdownItem>
-               <MDBDropdownItem href="/chartreg">
-                Classes Region
-               </MDBDropdownItem>
-            </MDBDropdownMenu> 
-          </MDBDropdown>  
-          </MDBNavItem>    
+              <MDBDropdownItem>
+                <li className="dropdown-submenu">
+                  <a className="dropdown-item" tabIndex="-1" href="/chartreg">Classes By Region</a>
+                </li>
+              </MDBDropdownItem>
+            </MDBDropdownMenu>
+          </MDBDropdown>
+         
         <MDBNavItem>
           <Link to="/profile" className={window.location.pathname === "/profile" ? "nav-link active" : "nav-link"}>
             <MDBBtn className="bluey">Profile</MDBBtn>
