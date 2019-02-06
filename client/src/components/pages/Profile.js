@@ -12,16 +12,10 @@ class Profile extends React.Component {
     userPhotoUrl: "",
     name: "",
     class: "",
-<<<<<<< HEAD
     lessons: "",
     users: [],
-    isAdmin: ""
-||||||| merged common ancestors
-    lessons: ""
-=======
     lessons: "",
     isAdmin: false
->>>>>>> origin
   };
 
   componentDidMount() {
@@ -118,17 +112,7 @@ class Profile extends React.Component {
               </MDBBtn>
             </Link>
             <Link to="/addLesson">
-<<<<<<< HEAD
-              <MDBBtn className="peach-gradient">
-                Add Lesson
-              </MDBBtn>
-||||||| merged common ancestors
-              <MDBBtn className="peach-gradient">
-                Add Lesson
-                </MDBBtn>
-=======
             {this.state.isAdmin ?  <MDBBtn className="peach-gradient"> Add Lesson </MDBBtn>: null}
->>>>>>> origin
             </Link>
           </div>
           <MDBContainer>
