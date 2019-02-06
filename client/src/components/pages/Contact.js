@@ -1,6 +1,7 @@
 // import { React, Component } from "react";
 import { MDBJumbotron, MDBNavbar, MDBNavbarBrand, MDBNavbarToggler, MDBNavbarNav, MDBCollapse, MDBNavItem, MDBNavLink, MDBFormInline, MDBBtn, MDBInput, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBIcon, MDBBadge, MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import React from "react";
+import Footer from "../Footer";
 
 
 function Contact() {
@@ -64,6 +65,7 @@ function Contact() {
           </MDBCol>
         </MDBRow>
       </div>
+      <Footer />
     </MDBContainer>
   );
 }
