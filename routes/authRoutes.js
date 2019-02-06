@@ -41,7 +41,8 @@ module.exports = function(app) {
         id: req.params.id
       },
       include: [
-        db.Lesson
+        db.Lesson,
+        db.User
       ]
     })
     .then(dbModel => res.json(dbModel))

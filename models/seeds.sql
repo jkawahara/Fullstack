@@ -20,16 +20,16 @@ VALUES
   ('https://media.licdn.com/dms/image/C5603AQGb2w2LrjZX4A/profile-displayphoto-shrink_800_800/0?e=1554940800&v=beta&t=OP2D6n4qy0Vmh8Or5YxwlTb4JTNlYZ5i16NxbKPFwYU', 'Glo Austin', 'glo@glo.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 1, 0, 1),
   ('https://media.licdn.com/dms/image/C4D03AQHtCZ7KvfIPRg/profile-displayphoto-shrink_800_800/0?e=1554940800&v=beta&t=A0JX-biWLvvUk_QEEelPqxkslYKH_qca37khgEbkG0w', 'Hannah Bowers', 'hannah@hannah.com', '$2a$10$QnStSdLFZBIo3WvQf8.iT.tim9Kf3d69zSDHSSK7rfAZK3UjLgNxO', 1, 0, 1);
 
-INSERT INTO Lessons (name, frontEndName, lessonUrl, ClassId) 
+INSERT INTO Lessons (name, frontEndName, lessonUrl, original, ClassId) 
 VALUES
 -- React
-  ('Lesson 1', 'React State', 'https://codesandbox.io/embed/olrox0pxv5', 1),
-  ('Lesson 1', 'React State', 'https://codesandbox.io/embed/olrox0pxv5', 2),
-  ('Lesson 1', 'React State', 'https://codesandbox.io/embed/olrox0pxv5', 3),
-  ('Lesson 2', 'React Props', 'https://codesandbox.io/embed/1483ql8m4j', 1),
-  ('Lesson 2', 'React Props', 'https://codesandbox.io/embed/1483ql8m4j', 2),
-  ('Lesson 3', 'React Forms', 'https://codesandbox.io/embed/mmqyjzljvj', 1),
+  ('Lesson 1', 'React State', 'https://codesandbox.io/embed/olrox0pxv5', 1, 1),
+  ('Lesson 1', 'React State', 'https://codesandbox.io/embed/olrox0pxv5', 1, 2),
+  ('Lesson 1', 'React State', 'https://codesandbox.io/embed/olrox0pxv5', 1, 3),
+  ('Lesson 2', 'React Props', 'https://codesandbox.io/embed/1483ql8m4j', 1, 1),
+  ('Lesson 2', 'React Props', 'https://codesandbox.io/embed/1483ql8m4j', 1, 2),
+  ('Lesson 3', 'React Forms', 'https://codesandbox.io/embed/mmqyjzljvj', 1, 1),
 -- jQuery
-  ('Lesson 4', 'Jquery Fridge Game', 'https://codesandbox.io/embed/k5y27rrn93', 1),
-  ('Lesson 5', 'Jquery Calculator', 'https://codesandbox.io/embed/ovlmo5w495', 1),
-  ('Lesson 6', 'Jquery Timeouts', 'https://codesandbox.io/embed/7j9prq2010', 1)
+  ('Lesson 4', 'Jquery Fridge Game', 'https://codesandbox.io/embed/k5y27rrn93', 0, 1),
+  ('Lesson 5', 'Jquery Calculator', 'https://codesandbox.io/embed/ovlmo5w495', 0, 1),
+  ('Lesson 6', 'Jquery Timeouts', 'https://codesandbox.io/embed/7j9prq2010', 0, 1)
