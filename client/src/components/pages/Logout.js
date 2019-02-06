@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { MDBContainer} from "mdbreact";
 import "./style.css";
+import Footer from "../Footer";
 
 class Logout extends React.Component {
 
@@ -18,7 +19,7 @@ class Logout extends React.Component {
     return (
       <div>
           <MDBContainer>
-            Go to another page, wanker!
+            <Footer />
           </MDBContainer>
       </div>
     );
