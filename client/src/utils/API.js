@@ -14,5 +14,9 @@ export default {
   // Saves user to the database
   saveUser: function(userData) {
     return axios.post("/api/users", userData);
+  },
+  // Saves lesson to the database
+  saveLesson: function(userData) {
+    return axios.post("/api/lessons", userData);
   }
 };

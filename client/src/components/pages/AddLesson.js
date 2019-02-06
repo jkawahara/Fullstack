@@ -2,14 +2,13 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import API from "../../utils/API.js";
-import { Redirect } from "react-router-dom";
 
-class SignUp extends React.Component {
+class AddLesson extends React.Component {
   state = {
     name: "",
-    email: "",
-    password: "",
-    class: "",
+    frontEndName: "",
+    lessonUrl: "",
+    ClassId: "",
     redirect: false
   };
   handleInputChange = event => {
@@ -21,34 +20,23 @@ class SignUp extends React.Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.saveUser({
+    console.log(this.state)
+    API.saveLesson({
       name: this.state.name,
-      email: this.state.email,
-      password: this.state.password,
-      class: this.state.class
+      frontEndName: this.state.frontEndName,
+      lessonUrl: this.state.lessonUrl,
+      ClassId: this.state.ClassId
     }).then((res) => {
       this.setState({
         name: "",
-        email: "",
-        password: "",
-        class: "",
+        frontEndName: "",
+        lessonUrl: "",
+        ClassId: ""
       });
-      this.setRedirect();
-      this.renderRedirect();
+      alert("Lesson added!")
     })
   };
 
-  setRedirect = () => {
-    this.setState({
-      redirect: true
-    })
-  }
-
-  renderRedirect = () => {
-    if (this.state.redirect) {
-      return <Redirect to="/login" />
-    }
-  }
 
   render() {
     return (
@@ -59,16 +47,16 @@ class SignUp extends React.Component {
             <MDBCol md="4">
               <form className="form"> {/* //for comp */}
                 <div className="form-group">
-                  <input size="30" name="name" className="form-control" placeholder="Lesson Name" value={this.state.name} onChange={this.handleInputChange} />
+                  <input size="30" name="name" className="form-control" placeholder="Lesson + Number" value={this.state.name} onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
-                  <input size="30" name="email" className="form-control" placeholder="Lesson URL" value={this.state.email} onChange={this.handleInputChange} />
+                  <input size="30" name="frontEndName" className="form-control" placeholder="Full Lesson Name" value={this.state.frontEndName} onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
-                  <input size="30" name="password" className="form-control" placeholder="Your password" value={this.state.password} onChange={this.handleInputChange} />
+                  <input size="30" name="lessonUrl" className="form-control" placeholder="Lesson URL" value={this.state.lessonUrl} onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
-                <select name="class" className="browser-default custom-select" onChange={this.handleInputChange} >
+                <select name="ClassId" className="browser-default custom-select" onChange={this.handleInputChange} >
                   <option>-- Class for Lesson --</option>
                   <option value="1">UCB</option>
                   <option value="2">Bootcamp2</option>
@@ -78,7 +66,6 @@ class SignUp extends React.Component {
                 <button onClick={this.handleFormSubmit} type="submit" className="btn btn-lg btn-danger float-right">
                   Sign Up
                 </button>
-                { this.renderRedirect() }
               </form>
             </MDBCol>
             <MDBCol md="4"></MDBCol>
@@ -88,4 +75,4 @@ class SignUp extends React.Component {
     );
   }
 }
-export default SignUp;
+export default AddLesson;
