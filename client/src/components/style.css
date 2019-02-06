@@ -4,15 +4,19 @@ nav {
 .marBot {
   margin-bottom: 23px;
 }
-.peach-gradient {
-  background: -webkit-linear-gradient(50deg,#ffd86f,#fc6262)!important;
-  background: -o-linear-gradient(50deg,#ffd86f,#fc6262)!important;
-  background: linear-gradient(40deg,#ffd86f,#fc6262)!important
+.peachy {
+  background: -webkit-linear-gradient(50deg,#ffbc58,#ff3030)!important;
+  background: -o-linear-gradient(50deg,#ffbc58,#ff3030)!important;
+  background: linear-gradient(40deg,#ffbc58,#ff3030)!important
 }
-.blue-gradient {
+.bluey {
   background: -webkit-linear-gradient(50deg,#1ef1e7,#00066B)!important;
   background: -o-linear-gradient(50deg,#1ef1e7,#00066B)!important;
   background: linear-gradient(40deg,#1ef1e7,#00066B)!important
+}
+canvas {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
 }
 
 /* ----------------------- Drop Down ----------------------- */
