@@ -9,6 +9,8 @@ class SignUp extends React.Component {
     name: "",
     email: "",
     password: "",
+    ClassId: "",
+    userPhotoUrl: "",
     redirect: false
   };
   handleInputChange = event => {
@@ -24,13 +26,15 @@ class SignUp extends React.Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      class: this.state.class
+      ClassId: this.state.ClassId,
+      userPhotoUrl: this.state.userPhotoUrl
     }).then((res) => {
       this.setState({
         name: "",
         email: "",
         password: "",
-        class: "",
+        ClassId: "",
+        userPhotoUrl: ""
       });
       this.setRedirect();
       this.renderRedirect();
@@ -64,15 +68,18 @@ class SignUp extends React.Component {
                   <input size="30" name="email" className="form-control" placeholder="Your e-mail" value={this.state.email} onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
-                  <input size="30" name="password" className="form-control" placeholder="Your password" value={this.state.password} onChange={this.handleInputChange} />
+                  <input size="30" type="password" name="password" className="form-control" placeholder="Your password" value={this.state.password} onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
-                <select className="browser-default custom-select">
-                  <option>-- Choose your class --</option>
-                  <option value="1">UCB</option>
-                  <option value="2">Bootcamp2</option>
-                  <option value="3">Bootcamp3</option>
-                </select>
+                  <select name="ClassId" className="browser-default custom-select" value={parseInt(this.state.ClassId)} onChange={this.handleInputChange}>
+                    <option>-- Choose your class --</option>
+                    <option value="1">UCB</option>
+                    <option value="2">Bootcamp2</option>
+                    <option value="3">Bootcamp3</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <input size="30" name="userPhotoUrl" className="form-control" placeholder="Profile Pic URL" value={this.state.userPhotoUrl} onChange={this.handleInputChange} />
                 </div>
                 <button onClick={this.handleFormSubmit} type="submit" className="btn btn-lg btn-danger float-right">
                   Sign Up

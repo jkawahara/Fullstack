@@ -38,7 +38,7 @@ function Home() {
           </MDBCard>
         </MDBCol>
       </MDBRow>
-      // Parallax scroll
+      {/* // Parallax scroll */}
     
     
       <section>
