@@ -51,21 +51,36 @@ function NavTabs() {
           </MDBNavItem>
         {/* ------ Right Navigation Buttons ------ */}
         <MDBNavbarNav right>
-          <MDBNavItem>
-            <Link to="/profile" className={window.location.pathname === "/profile" ? "nav-link active" : "nav-link"}>
-              <MDBBtn className="bluey">Profile</MDBBtn>
-            </Link>
-          </MDBNavItem>
-          <MDBNavItem>
-            <Link to="/SignUp" className={window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}>
-              <MDBBtn className="bluey">SignUp</MDBBtn>
-            </Link>
-          </MDBNavItem>
-          <MDBNavItem>
-            <Link to="/Login" className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}>
-              <MDBBtn className="bluey">Login</MDBBtn>
-            </Link>
-          </MDBNavItem>
+        <MDBNavItem>
+          <MDBDropdown>
+            <MDBDropdownToggle className="bluey">
+            <Link to="#" className={window.location.pathname === "/charts" ? "nav-link active" : "nav-link"}>Charts</Link>  
+            </MDBDropdownToggle>
+            <MDBDropdownMenu>
+              <MDBDropdownItem href="/chart">
+               Classes Taken
+              </MDBDropdownItem>
+               <MDBDropdownItem href="/chartreg">
+                Classes Region
+               </MDBDropdownItem>
+            </MDBDropdownMenu> 
+          </MDBDropdown>  
+          </MDBNavItem>    
+        <MDBNavItem>
+          <Link to="/profile" className={window.location.pathname === "/profile" ? "nav-link active" : "nav-link"}>
+            <MDBBtn className="bluey">Profile</MDBBtn>
+          </Link>
+        </MDBNavItem>
+        <MDBNavItem>
+          <Link to="/SignUp" className={window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}>
+            <MDBBtn className="bluey">SignUp</MDBBtn>
+          </Link>
+        </MDBNavItem>
+        <MDBNavItem>
+          <Link to="/Login" className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}>
+            <MDBBtn className="bluey">Login</MDBBtn>
+          </Link>
+        </MDBNavItem>
         </MDBNavbarNav>
       </MDBNavbar>
   );

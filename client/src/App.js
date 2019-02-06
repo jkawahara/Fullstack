@@ -9,6 +9,9 @@ import Login from "./components/pages/Login";
 import Logout from "./components/pages/Logout";
 import AddLesson from "./components/pages/AddLesson"
 import Profile from "./components/pages/Profile";
+import Chart from "./components/pages/Chart";
+import ChartReg from "./components/pages/ChartReg";
+
 import "./components/pages/style.css";
 
 function App() {
@@ -24,8 +27,8 @@ function App() {
         <Route path="/lessons" component={Lesson} />
         <Route path="/profile" component={Profile} />
         <Route path="/addlesson" component={AddLesson} />
-        {/* <Route path="/charts" component={Chart} */}
-        {/* <Route path="/charts" component={Chart} */}
+        <Route path="/chart" component={Chart} />
+        <Route path="/chartreg" component={ChartReg} />
         <Route component={NoMatch} />
         </Switch>
       </div>
