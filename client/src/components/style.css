@@ -8,7 +8,6 @@ canvas {
   border-radius: 10px;
   background-color: #FFF;
 }
-
 footer {
   background-color: #777;
 }
@@ -28,7 +27,9 @@ footer {
   background: -o-linear-gradient(50deg,#1ef1e7,#00066B)!important;
   background: linear-gradient(40deg,#1ef1e7,#00066B)!important
 }
-
+.va {
+  margin-top: 16px;
+}
 
 /* ----------------------- Drop Down ----------------------- */
 .dropdown-submenu {

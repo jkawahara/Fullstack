@@ -106,6 +106,10 @@ class Profile extends React.Component {
         needMentor: 1
       },
     ).then((res) => {
+        this.setState({
+          needMentor: true
+        })
+      })
       this.setState({
         needMentor: true
       })
@@ -163,6 +167,13 @@ class Profile extends React.Component {
               {this.state.isAdmin ? (
                 <MDBCol md="3">
                   <h5>Users Needing Mentor:</h5>
+                    {this.state.users.length ? (
+                      <ul>
+                        {this.state.users.map(user => (
+                          <li>{user.name}</li>
+                        ))}
+                      </ul>
+                    ) : (
                   {this.state.users.length ? (
                     <ul>
                       {this.state.users.map(user => (
@@ -174,6 +185,16 @@ class Profile extends React.Component {
                     )}
                 </MDBCol>
               ) : (
+                <MDBCol>
+                  {!this.state.needMentor ? (
+                    <MDBBtn onClick={this.handleGetMentor} className="peachy">
+                      Click for a mentor!
+                    </MDBBtn>
+                  ) : (
+                    <h3>A mentor will be in contact soon</h3>
+                  )}
+                </MDBCol>
+              )}
                   <MDBCol>
                     {!this.state.needMentor ? (
                       <MDBBtn onClick={this.handleGetMentor} className="peachy">
