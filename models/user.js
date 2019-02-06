@@ -50,6 +50,10 @@ module.exports = function(sequelize, DataTypes) {
       allownull: false,
       defaultValue: false
     },
+    needMentor: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true
+    },
     createdAt: {
       type: DataTypes.DATE,
       defaultValue: sequelize.literal("CURRENT_TIMESTAMP")
