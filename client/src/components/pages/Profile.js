@@ -90,9 +90,8 @@ class Profile extends React.Component {
 
   // Deletes a lesson if it's not an original one
   handleDeleteSubmit = (id, event) => {
-    console.log(id);
     API.deleteLesson(id)
-      .then(res => this.loadLessons())
+      .then(res => this.componentDidMount())
       .catch(err => console.log(err));
   };  
 
