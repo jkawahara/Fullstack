@@ -9,12 +9,12 @@ const FooterPage = () => {
         <MDBContainer fluid>
           <MDBRow>
             <MDBCol md="10" className="va">
-              &copy; {new Date().getFullYear()} Copyright: <a href="https://jkawahara.github.io">John Kawahara</a>, <a href="https://www.orionabrams.com">Orion Abrams</a>, <a href="http://www.jarrenpatao.com">Jarren Patao</a>, <a href="https://github.com/Momo0532">Jason Villaluz</a>
+              <p className="text-dark">&copy; {new Date().getFullYear()} Copyright: <a className="text-dark" href="https://jkawahara.github.io">John Kawahara</a>, <a className="text-dark" href="https://www.orionabrams.com">Orion Abrams</a>, <a className="text-dark" href="http://www.jarrenpatao.com">Jarren Patao</a>, <a className="text-dark" href="https://github.com/Momo0532">Jason Villaluz</a></p>
             </MDBCol>
             <MDBCol md="2">
               <MDBBtn className="bluey btn-floating btn-sm">
                 <Link to="/contact" className={window.location.pathname === "/contact" ? "nav-link active" : "nav-link"}>
-                  <MDBIcon icon="hands-helping fa-2x" />
+                  Contact Us <MDBIcon icon="hands-helping fa" />
                 </Link>
               </MDBBtn>
             </MDBCol>

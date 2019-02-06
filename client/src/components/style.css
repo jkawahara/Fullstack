@@ -1,5 +1,5 @@
 #root {
-  background-color: #777;
+  background-color: #FFF;
 }
 nav {
   height: 80px;
@@ -9,7 +9,10 @@ canvas {
   background-color: #FFF;
 }
 footer {
-  background-color: #777;
+  background-color: #FFF; 
+}
+a {
+  color: #000;
 }
 .marBot {
   margin-bottom: 23px;
