@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./navStyle.css";
+import "./style.css";
 // import { Logo } from "/pages\/assets/images/fullStackLogoNew.png";
 import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBBtn, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink } from "mdbreact";
 
@@ -17,13 +17,13 @@ function NavTabs() {
       <MDBNavbarBrand>
         <MDBNavLink to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
         {/* <img src={ Logo } /> */}
-          <MDBBtn className="peach-gradient">Fullstack</MDBBtn>
+          <MDBBtn className="peachy">Fullstack</MDBBtn>
         </MDBNavLink>
       </MDBNavbarBrand>
     {/* --------------- Nav Items --------------- */}
         <MDBNavItem>
           <MDBDropdown className="marBot">
-            <MDBDropdownToggle className="peach-gradient">
+            <MDBDropdownToggle className="peachy">
               Lessons
             </MDBDropdownToggle>
             <MDBDropdownMenu>
@@ -54,17 +54,17 @@ function NavTabs() {
         
         <MDBNavItem>
           <Link to="/profile" className={window.location.pathname === "/profile" ? "nav-link active" : "nav-link"}>
-            <MDBBtn className="blue-gradient">Profile</MDBBtn>
+            <MDBBtn className="bluey">Profile</MDBBtn>
           </Link>
         </MDBNavItem>
         <MDBNavItem>
           <Link to="/SignUp" className={window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}>
-            <MDBBtn className="blue-gradient">SignUp</MDBBtn>
+            <MDBBtn className="bluey">SignUp</MDBBtn>
           </Link>
         </MDBNavItem>
         <MDBNavItem>
           <Link to="/Login" className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}>
-            <MDBBtn className="blue-gradient">Login</MDBBtn>
+            <MDBBtn className="bluey">Login</MDBBtn>
           </Link>
         </MDBNavItem>
         </MDBNavbarNav>
