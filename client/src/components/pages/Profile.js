@@ -66,8 +66,8 @@ class Profile extends React.Component {
                       lessonsArray.push(
                         <li>
                           <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].frontEndName}</a>
-                          <button onClick={this.handleDeleteSubmit.bind(this, res.data.Lessons[i].id)} data-id={res.data.Lessons[i].id} className="btn btn-primary btn-sm text-white">
-                            Delete
+                          <button onClick={this.handleDeleteSubmit.bind(this, res.data.Lessons[i].id)} data-id={res.data.Lessons[i].id} className="btn btn-danger btn-sm text-white">
+                          ✗
                           </button>
                         </li>)
                     } else {
@@ -176,7 +176,7 @@ class Profile extends React.Component {
                   </div>
                   : null}
               </MDBCol>
-              <MDBCol md="3">
+              <MDBCol md="4">
                 <h3>
                   Class: {this.state.class}
                 </h3>
@@ -185,7 +185,7 @@ class Profile extends React.Component {
                 </h5>
               </MDBCol>
               {this.state.isAdmin ? (
-                <MDBCol md="3">
+                <MDBCol md="2">
                   <h5>Users Needing Mentor:</h5>
                     {this.state.users.length ? (
                       <ul>
