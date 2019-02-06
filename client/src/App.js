@@ -7,6 +7,7 @@ import NoMatch from "./components/pages/NoMatch";
 import SignUp from "./components/pages/SignUp";
 import Login from "./components/pages/Login";
 import Logout from "./components/pages/Logout";
+import AddLesson from "./components/pages/AddLesson"
 import Profile from "./components/pages/Profile";
 import "./components/pages/style.css";
 
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/logout" component={Logout} />
         <Route path="/lessons" component={Lesson} />
         <Route path="/profile" component={Profile} />
+        <Route path="/addlesson" component={AddLesson} />
         {/* <Route path="/charts" component={Chart} */}
         {/* <Route path="/charts" component={Chart} */}
         <Route component={NoMatch} />
