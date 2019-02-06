@@ -14,17 +14,14 @@ class Profile extends React.Component {
     class: "",
     lessons: "",
     users: [],
-    lessons: "",
     isAdmin: false
   };
 
   componentDidMount() {
     let thisUserClass;
     let currentProfile = parseInt(window.location.pathname.split("/").pop());
-    console.log(currentProfile)
     axios.get("/profile")
       .then(res => {
-        console.log(res.data)
         this.setState({
           isAdmin: res.data.isAdmin
         })
@@ -70,14 +67,12 @@ class Profile extends React.Component {
   usersNeedMentor = () => {
     API.getUsers()
       .then((res) => {
-        console.log(res.data);
         const needMentor = [];
-        res.data.map((user, index) => {
+        res.data.map(user => {
           if (user.needMentor) {
             needMentor.push(user);
-          }  
+          }
         })
-        console.log(needMentor);
         this.setState({
           users: needMentor
         });
