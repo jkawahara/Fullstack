@@ -38,11 +38,11 @@ function NavTabs() {
               </MDBDropdownItem>
               <MDBDropdownItem>
                 <li className="dropdown-submenu">
-                  <a className="dropdown-item" tabIndex="-1" href="/lessons/react/1">React Lessons</a>
+                  <a className="dropdown-item" tabIndex="-1" href="/lessons/jquery/4">jQuery Lessons</a>
                   <ul className="dropdown-menu">
-                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/react/1">Lesson 1 - State</Link></li>
-                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/react/2">Lesson 2 - Props</Link></li>
-                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/react/3">Lesson 3 - Forms</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/4">Lesson 4 - Fridge Game</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/5">Lesson 2 - Calculator</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/6">Lesson 3 - Timeouts</Link></li>
                   </ul>
                 </li>
               </MDBDropdownItem>
