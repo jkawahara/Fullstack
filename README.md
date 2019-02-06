@@ -3,7 +3,7 @@
   * Fullstack is a web based application that enable users, affiliated with coding boot camps, to organize their curriculum, and increase networking engagement.
  ### 2. What / Objectives / User Stories
   * From design through deployment of the application, this project used the following web development technologies:
-    * Server-side: Node.js w/ Express web app framework; MySQL for data persistence w/ Sequelize ORM; Firebase DB for realtime data persistence; Passport for user authentication; WebSocket for 2-way interactive communications across server/client 
+    * Server-side: Node.js w/ Express web app framework; MySQL for data persistence w/ Sequelize ORM; Firebase DB for realtime data persistence; Passport for user authentication; WebSocket (TBD) for 2-way interactive communications across server/client 
     * Client-side: React.js library for component based user interface; Material Bootstrap framework for HTML/CSS
   * User Stories, by categorization:
     * Design and develop Wireframe mockup including conceptual single page application with component based views: login, user profile, pet profile, community
@@ -21,13 +21,12 @@
       * NavBar ![navbar.png](client/public/assets/readmelinks/navbar.png "navbar")
       * Sign up as a new user ![signup.png](client/public/assets/readmelinks/signup.png "signup")
       * Login ![login.png](client/public/assets/readmelinks/login.png "login")
-      <!-- * OAuth login ![oauthsignin.png](client/public/assets/readmelinks/oauthsignin.png "oauthsignin") -->
-      * Select lesson ![lessonselect.png](client/public/assets/readmelinks/lessonselect.png "lessonselect")
-      * Lessons page ![lessoncode.png](client/public/assets/readmelinks/lessoncode.png "lessoncode")
+      * Lesson page ![lessoncode.png](client/public/assets/readmelinks/lessoncode.png "lessoncode")
       * Student Profile page ![profilestudent.png](client/public/assets/readmelinks/profilestudent.png "profilestudent")
+      * Student get mentor ![getmentor.png](client/public/assets/readmelinks/getmentor.png "getmentor")
       * Admin Profile page ![profileadmin.png](client/public/assets/readmelinks/profileadmin.png "profileadmin")
       * Add lesson ![addlesson.png](client/public/assets/readmelinks/addlesson.png "addlesson")
-      <!-- * Charts TBD ![charts.png](client/public/assets/readmelinks/charts.png "charts") -->
+      * Charts ![charts.png](client/public/assets/readmelinks/charts.png "charts")
       * JSON Resources
         * Classes ![jsonclasses.png](client/public/assets/readmelinks/jsonclasses.png "jsonclasses")
         * Lessons ![jsonlessons.png](client/public/assets/readmelinks/jsonlessons.png "jsonlessons")
