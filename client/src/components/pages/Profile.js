@@ -22,7 +22,6 @@ class Profile extends React.Component {
   };
 
   componentDidMount() {
-    console.log(this.state)
     let thisUserClass;
     let currentProfile = parseInt(window.location.pathname.split("/").pop());
     axios.get("/profile")
@@ -70,7 +69,6 @@ class Profile extends React.Component {
                             Delete
                           </button>
                         </li>)
-                        
                     } else {
                       lessonsArray.push(
                         <li>
@@ -91,7 +89,6 @@ class Profile extends React.Component {
 
   // Deletes a lesson if it's not an original one
   handleDeleteSubmit = (id, event) => {
-    console.log(id);
     API.deleteLesson(id)
       .then(res => this.componentDidMount())
       .catch(err => console.log(err));
