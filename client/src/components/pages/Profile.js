@@ -3,58 +3,102 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
 import "./style.css";
-var profileNum
+import API from "../../utils/API.js";
+
+let profileNum;
 
 class Profile extends React.Component {
   state = {
     userPhotoUrl: "",
     name: "",
     class: "",
-    lessons: ""
+    lessons: "",
+    users: [],
+    lessons: "",
+    isAdmin: false
   };
 
   componentDidMount() {
-    var thisUserClass
-    var currentProfile = parseInt(window.location.pathname.split("/").pop());
+    let thisUserClass;
+    let currentProfile = parseInt(window.location.pathname.split("/").pop());
     console.log(currentProfile)
-    if (!currentProfile){
-      currentProfile= 1
-      console.log(currentProfile)
-    }
     axios.get("/profile")
-    .then(res => {
-      console.log(res.data)
-      if (typeof res.data !== 'object'){
-        alert("Must sign in first!")
-      }
-      else if (res.data.isAdmin){
-        profileNum = currentProfile
-      }
-      else {
-      profileNum = res.data.id
-      }
-  }).then(() =>
-    axios.get("/profile/" + profileNum)
       .then(res => {
-          thisUserClass = res.data.ClassId
-        this.setState({ userPhotoUrl: res.data.userPhotoUrl, name: res.data.name })
-      }).then(() => {
-        axios.get("/profile/class/" + thisUserClass)
+        console.log(res.data)
+        this.setState({
+          isAdmin: res.data.isAdmin
+        })
+        if (typeof res.data !== 'object') {
+          alert("Must sign in first!")
+        }
+        else if (res.data.isAdmin && !currentProfile) {
+          this.state.isAdmin = true
+          profileNum = res.data.id
+        }
+        else if (res.data.isAdmin){
+          this.state.isAdmin = true
+          profileNum = currentProfile
+        }
+        else {
+          profileNum = res.data.id
+        }
+      }).then(() =>
+        axios.get("/profile/" + profileNum)
           .then(res => {
-            console.log(res.data)
-            let lessonsArray = [];
-            if (typeof res.data === 'object'){
-            for (let i = 0; i < res.data.Lessons.length; i++) {
-              lessonsArray.push(
-                <li>
-                  <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].frontEndName}</a>
-                </li>)
-            }
-          }
-            this.setState({ class: res.data.name, lessons: lessonsArray })
-          })
-      }))
+            thisUserClass = res.data.ClassId
+            this.setState({ userPhotoUrl: res.data.userPhotoUrl, name: res.data.name })
+          }).then(() => {
+            axios.get("/profile/class/" + thisUserClass)
+              .then(res => {
+                console.log(res.data)
+                let lessonsArray = [];
+                if (typeof res.data === 'object') {
+                  for (let i = 0; i < res.data.Lessons.length; i++) {
+                    lessonsArray.push(
+                      <li>
+                        <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].frontEndName}</a>
+                      </li>)
+                  }
+                }
+                this.setState({ class: res.data.name, lessons: lessonsArray })
+              })
+            this.usersNeedMentor();
+          }))
   }
+
+  // Get users that need mentor
+  usersNeedMentor = () => {
+    API.getUsers()
+      .then((res) => {
+        console.log(res.data);
+        const needMentor = [];
+        res.data.map((user, index) => {
+          if (user.needMentor) {
+            needMentor[index] = user;
+          }  
+        })
+        console.log(needMentor);
+        this.setState({
+          users: needMentor
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+  // Handles update to needMentor
+  // handleGetMentor = event => {
+  //   event.preventDefault();
+  //   API.updateUser({
+  //     name: this.state.name
+  //   }).then((res) => {
+  //       console.log(res.data);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // };
 
   render() {
     return (
@@ -62,30 +106,48 @@ class Profile extends React.Component {
         <MDBContainer>
           <h2>Welcome, {this.state.name}</h2>
           <div right>
-
             <Link to="/logout">
-            <MDBBtn className="peach-gradient">
+              <MDBBtn className="peach-gradient">
                 Logout
-                </MDBBtn>
+              </MDBBtn>
             </Link>
-          
+            <Link to="/addLesson">
+            {this.state.isAdmin ?  <MDBBtn className="peach-gradient"> Add Lesson </MDBBtn>: null}
+            </Link>
           </div>
           <MDBContainer>
             <MDBRow>
               <MDBCol md="6">
                 <img alt="Profile Pic" className="smallPic" src={this.state.userPhotoUrl} />
               </MDBCol>
-              <MDBCol md="6">
+              <MDBCol md="3">
                 <h3>
                   Class: {this.state.class}
                 </h3>
                 <h5>
-                  Lessons: {this.state.lessons}
+                  Lessons: {this.state.lessons}  
                 </h5>
               </MDBCol>
+              {this.state.isAdmin ? (
+                <MDBCol md="3">
+                  <h5>Users Needing Mentor:</h5>
+                    {this.state.users.length ? (
+                      <ul>
+                        {this.state.users.map(user => (
+                          <li>{user.name}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <h3>No users need a mentor</h3>
+                    )}
+                </MDBCol>
+              ) : (
+                <MDBBtn onClick={this.handleGetMentor} className="peach-gradient">
+                  Click for a mentor!
+                </MDBBtn>
+              )}
             </MDBRow>
           </MDBContainer>
-
         </MDBContainer>
       </div>
     );
@@ -93,4 +155,3 @@ class Profile extends React.Component {
 }
 
 export default Profile;
-
