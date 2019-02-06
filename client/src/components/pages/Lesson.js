@@ -1,10 +1,14 @@
 import React from "react";
 import Iframe from "react-iframe"
 import axios from "axios";
+import quotesArray from "../../assets/quotes/quotesArray"
 
+var randomNumber = Math.round(Math.random() * quotesArray.length);
+console.log(quotesArray[randomNumber])
 class Lesson extends React.Component {
   state = {
-    lesson: ""
+    lesson: "",
+    quote: quotesArray[randomNumber]
   };
 
   //This history allows a listen for a url change, which allows new lesson to render without refreshing page.
@@ -53,6 +57,7 @@ class Lesson extends React.Component {
   render() {
     return (
       <div>
+        <p>{this.state.quote}</p>
         <div>
           <Iframe url={this.state.lesson}
             width="100%"
