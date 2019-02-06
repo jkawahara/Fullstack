@@ -1,45 +1,20 @@
-.bio {
-  margin: 20px;
-  text-align: justify;
+p {
+  text-align: center;
 }
 
-.top-space {
-  margin-top: 25px;
+.smallPic {
+  max-width: 40%;
+  max-height: 200px;
+  border-radius: 6px;
 }
 
-.my-nav {
-  list-style: none;
-}
-.my-name{
-  float: right;
-}
-.face {
-  margin: 20px;
-  height: 200px;
-  width: 200px;
-  float: left;
+.maxHeight {
+  max-height: 100vh;
+  max-width: 100%;
 }
 
-
-/* .project {
-  height:150px;
-  width:200px;
-  margin: 10px;
-  z-index: -1;
-} */
-
-.email {
-  height: 24px;
-  width: 24px;
-  position: absolute;
-  top: 15px;
-  left: 160px;
-}
-
-.very-high {
-  height: 100%;
-}
-
+/* ------------------------ Possible Stuff ------------------------ */
+/*
 .footer {
   background-color: gray;
   height: 69.5px;
@@ -52,6 +27,7 @@
   bottom: 0;
   width:100%;
 }
+
 .space-from-footer {
   margin-bottom: 100px;
 }
@@ -60,23 +36,8 @@
   min-height:100vh;
   position:relative;
 }
-/* .copyright-text {
+
+ .copyright-text {
   margin-top:20px;
-} */
-
-.prof-icons {
-  float: right;
-  margin-left: 20px;
-  width: 48px;
-  height: 48px;
 }
-
-.zoom {
-  transition: transform .2s; /* Animation */
-  margin: 0 auto;
-}
-
-.zoom:hover {
-  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-  z-index: 99999 ;
-}
+*/

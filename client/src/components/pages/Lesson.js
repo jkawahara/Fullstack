@@ -31,6 +31,7 @@ class Lesson extends React.Component {
   //had to put this here because couldn't go directly to a lesson with url otherwise
   componentDidMount() {
     var url = window.location.pathname;
+    console.log(url)
     var lessonNumber = url
       .split("/") // split to an array
       .slice(-2) // take the two last elements
@@ -40,7 +41,7 @@ class Lesson extends React.Component {
 
       .then(res => {
         console.log("Sent")
-        console.log(res.data.lessonUrl)
+        console.log(res)
         this.setState({ lesson: res.data.lessonUrl })
       })
   }
@@ -52,11 +53,10 @@ class Lesson extends React.Component {
   render() {
     return (
       <div>
-        <br></br> <br></br> <br></br> <br></br> <br></br>
         <div>
           <Iframe url={this.state.lesson}
             width="100%"
-            height="75vh"
+            height="80vh"
             border="0"
             border-radius="4px"
             overflow="hidden"

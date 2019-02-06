@@ -1,53 +1,90 @@
+// *** Include Modules: npm (react, mdbreact), /utils
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
-
-var sectionStyle = {
-  width: "100%",
-  height: "100vh"
-};
+import API from "../../utils/API.js";
+import { Redirect } from "react-router-dom";
 
 class SignUp extends React.Component {
-    state = {
-      signup: ''
-    };
+  state = {
+    name: "",
+    email: "",
+    password: "",
+    redirect: false
+  };
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
-render() { 
-  return (
-    <div style={sectionStyle} >
-    <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-    {/* if material bootstrap is installed, you should see the below button as green */}
-   
+  handleFormSubmit = event => {
+    event.preventDefault();
+    API.saveUser({
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      class: this.state.class
+    }).then((res) => {
+      this.setState({
+        name: "",
+        email: "",
+        password: "",
+        class: "",
+      });
+      this.setRedirect();
+      this.renderRedirect();
+    })
+  };
 
-    <MDBContainer>
-      <MDBRow>
-        <MDBCol md="4"></MDBCol>
-        <MDBCol md="4"> 
-        <div className="form-group">
-      <input size="30" type="Name" className="form-control" placeholder="Your Name" />
-    
-    </div>
-   <div className="form-group">
-      <input size="30" type="email" className="form-control" placeholder="Your e-mail" />
-    
-    </div>
-    <div className="form-group">
-      <input size="30" type="password" className="form-control" placeholder="Your password" />
-    
-    </div>
-<button className="btn-default">SignUp</button>
-    
-       
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
 
-   
-        </MDBCol>
-        <MDBCol md="4"></MDBCol>
-      </MDBRow >
-    </MDBContainer>
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to="/login" />
+    }
+  }
 
-
-    </div>
-     
-  );
-}
+  render() {
+    return (
+      <div >
+        <MDBContainer>
+          <MDBRow>
+            <MDBCol md="4"></MDBCol>
+            <MDBCol md="4">
+              <form className="form"> {/* //for comp */}
+                <div className="form-group">
+                  <input size="30" name="name" className="form-control" placeholder="Your Name" value={this.state.name} onChange={this.handleInputChange} />
+                </div>
+                <div className="form-group">
+                  <input size="30" name="email" className="form-control" placeholder="Your e-mail" value={this.state.email} onChange={this.handleInputChange} />
+                </div>
+                <div className="form-group">
+                  <input size="30" name="password" className="form-control" placeholder="Your password" value={this.state.password} onChange={this.handleInputChange} />
+                </div>
+                <div className="form-group">
+                <select className="browser-default custom-select">
+                  <option>-- Choose your class --</option>
+                  <option value="1">UCB</option>
+                  <option value="2">Bootcamp2</option>
+                  <option value="3">Bootcamp3</option>
+                </select>
+                </div>
+                <button onClick={this.handleFormSubmit} type="submit" className="btn btn-lg btn-danger float-right">
+                  Sign Up
+                </button>
+                { this.renderRedirect() }
+              </form>
+            </MDBCol>
+            <MDBCol md="4"></MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </div>
+    );
+  }
 }
 export default SignUp;

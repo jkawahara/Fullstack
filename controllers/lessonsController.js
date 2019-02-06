@@ -14,15 +14,15 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findOne: function(req, res) {
+  findOneLesson: function(req, res) {
     db.Lesson
       .findOne({ where: { name: "Lesson " + req.params.id } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findById: function(req, res) {
+  findOneId: function(req, res) {
     db.Lesson
-      .findById(req.params.id)
+      .findOne({ where: { id: req.params.id } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -51,5 +51,18 @@ module.exports = {
       })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  loadUser: function (req, res) {
+    db.Class
+    .findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [
+        db.Lesson
+      ]
+    })
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
   }
 };

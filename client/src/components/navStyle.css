@@ -1,8 +1,21 @@
-/* I can't seem to get a margin below navbar without lots of breaks */
-.my-nav {
-  padding-top: 200px;
+nav {
+  height: 80px;
+}
+.marBot {
+  margin-bottom: 23px;
+}
+.peach-gradient {
+  background: -webkit-linear-gradient(50deg,#ffd86f,#fc6262)!important;
+  background: -o-linear-gradient(50deg,#ffd86f,#fc6262)!important;
+  background: linear-gradient(40deg,#ffd86f,#fc6262)!important
+}
+.blue-gradient {
+  background: -webkit-linear-gradient(50deg,#1ef1e7,#00066B)!important;
+  background: -o-linear-gradient(50deg,#1ef1e7,#00066B)!important;
+  background: linear-gradient(40deg,#1ef1e7,#00066B)!important
 }
 
+/* ----------------------- Drop Down ----------------------- */
 .dropdown-submenu {
   position: relative;
 }
