@@ -4,12 +4,14 @@ import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import API from "../../utils/API";
 import { FormInput, FormBtn } from "../FormInput";
 import "./style.css";
+import { Redirect } from "react-router-dom";
 
 class Login extends Component {
   state = {
     user: {},
     email: "",
     password: "",
+    redirect: false
   };
 
   // Handles updating component state when the user types into the input field
@@ -30,9 +32,8 @@ class Login extends Component {
       })
         .then((res) => {
           if (res.data){
-            window.location.replace(res.data);
+            this.setState({ redirect: true })
           }
-          this.setState({ user: res.data, email: "", password: "" });
         })
         .catch(err => {
           console.log(err);
@@ -46,6 +47,7 @@ class Login extends Component {
   render() {
     return (
       <div>
+        {this.state.redirect ? <Redirect to="/profile" /> : null}
         <MDBContainer>
           <MDBRow>
             <MDBCol md="4">{/* Grid Spacer */}</MDBCol>
