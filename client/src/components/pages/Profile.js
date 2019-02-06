@@ -17,43 +17,42 @@ class Profile extends React.Component {
     var thisUserClass
     var currentProfile = parseInt(window.location.pathname.split("/").pop());
     console.log(currentProfile)
-    if (!currentProfile){
-      currentProfile= 1
-      console.log(currentProfile)
-    }
     axios.get("/profile")
-    .then(res => {
-      console.log(res.data)
-      if (typeof res.data !== 'object'){
-        alert("Must sign in first!")
-      }
-      else if (res.data.isAdmin){
-        profileNum = currentProfile
-      }
-      else {
-      profileNum = res.data.id
-      }
-  }).then(() =>
-    axios.get("/profile/" + profileNum)
       .then(res => {
-          thisUserClass = res.data.ClassId
-        this.setState({ userPhotoUrl: res.data.userPhotoUrl, name: res.data.name })
-      }).then(() => {
-        axios.get("/profile/class/" + thisUserClass)
+        console.log(res.data)
+        if (typeof res.data !== 'object') {
+          alert("Must sign in first!")
+        }
+        else if (res.data.isAdmin && !currentProfile) {
+          profileNum = res.data.id
+        }
+        else if (res.data.isAdmin){
+          profileNum = currentProfile
+        }
+        else {
+          profileNum = res.data.id
+        }
+      }).then(() =>
+        axios.get("/profile/" + profileNum)
           .then(res => {
-            console.log(res.data)
-            let lessonsArray = [];
-            if (typeof res.data === 'object'){
-            for (let i = 0; i < res.data.Lessons.length; i++) {
-              lessonsArray.push(
-                <li>
-                  <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].frontEndName}</a>
-                </li>)
-            }
-          }
-            this.setState({ class: res.data.name, lessons: lessonsArray })
-          })
-      }))
+            thisUserClass = res.data.ClassId
+            this.setState({ userPhotoUrl: res.data.userPhotoUrl, name: res.data.name })
+          }).then(() => {
+            axios.get("/profile/class/" + thisUserClass)
+              .then(res => {
+                console.log(res.data)
+                let lessonsArray = [];
+                if (typeof res.data === 'object') {
+                  for (let i = 0; i < res.data.Lessons.length; i++) {
+                    lessonsArray.push(
+                      <li>
+                        <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].frontEndName}</a>
+                      </li>)
+                  }
+                }
+                this.setState({ class: res.data.name, lessons: lessonsArray })
+              })
+          }))
   }
 
   render() {
@@ -64,11 +63,16 @@ class Profile extends React.Component {
           <div right>
 
             <Link to="/logout">
-            <MDBBtn className="peach-gradient">
+              <MDBBtn className="peach-gradient">
                 Logout
                 </MDBBtn>
             </Link>
-          
+            <Link to="/addLesson">
+              <MDBBtn className="peach-gradient">
+                Add Lesson
+                </MDBBtn>
+            </Link>
+
           </div>
           <MDBContainer>
             <MDBRow>
