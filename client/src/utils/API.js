@@ -26,5 +26,9 @@ export default {
   // Saves lesson to the database
   saveLesson: function(userData) {
     return axios.post("/api/lessons", userData);
+  },
+  // Deletes lesson
+  deleteLesson: function(lessonId) {
+    return axios.delete("/api/lessons/" + lessonId)
   }
 };
