@@ -2,15 +2,17 @@ import React from "react";
 // import Lesson from "./Lesson";
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody } from "mdbreact";
 import ChartsPage from "../ChartsPage";
+import Footer from "../Footer";
 // import { img } from "./assets/images/dataFlow.png";
 
 function Home() {
   return (
     <MDBContainer>
       <MDBRow>
-        {/* idk... side stuff? */}
+        {/* ----------- Home: Left Column ----------- */}
         <MDBCol md="4">
           <MDBContainer>
+            {/* -------------- Details -------------- */}
             <MDBCard color="red lighten-1" text="white" className="text-center">
               <MDBCardBody>
                 
@@ -31,15 +33,17 @@ function Home() {
             </MDBCard>
           </MDBContainer>
         </MDBCol>
-        {/* Body */}
+        {/* ----------- Home: Right Column ----------- */}
         <MDBCol sm="8">
+          {/* ----- Why: About Fullstack Network ----- */}
           <MDBCard color="unique-color-dark" text="white" className="text-center">
             <MDBCardBody>
               <p>
-              Fullstack is a web based application that enable users, affiliated with coding boot camps, to organize their curriculum and increase networking engagement.<br />
-                {/* <img alt="data flow" src={img} /> */}
+                Fullstack is a web based application that enable users, affiliated with coding boot camps, to organize their curriculum and increase networking engagement.<br />
                 <br />
-              We've designed Fullstack with boot camps in mind. As students we've found that in many programs the lessons are often separated into segments which is understandable from an educational standpoint, but what about after you've learned the material? How many times have you've learned something too quickly and you need to go back and refer to your notes? We have, many- many times. So we built this application for you.
+                We've designed Fullstack with boot camps in mind. <br />
+                <br />
+                As students we've found that in many programs the lessons are often separated into segments which is understandable from an educational standpoint, but what about after you've learned the material? How many times have you've learned something too quickly and you need to go back and refer to your notes? We have, many- many times. So we built this application for you.
               </p>
               <MDBRow>
                 <MDBCol md="8">
@@ -47,9 +51,9 @@ function Home() {
                 </MDBCol>
                 <MDBCol md="4">
                   <p>
-                  As a boot camp administrator, how often have you struggled with platforms to manage your student's data analytics? With Fullstack you'll be able to upload lessons belonging to your cohort for easy management.
-                  <hr />
-                  In possible future updates, we will add live editing to an IDE with multiple sockets for mentoring sessions and more!
+                    As a boot camp administrator, how often have you struggled with platforms to manage your student's data analytics? With Fullstack you'll be able to upload lessons belonging to your cohort for easy management.
+                    <hr />
+                    In possible future updates, we will add live editing to an IDE with multiple sockets for mentoring sessions and more!
                   </p>
                 </MDBCol>
               </MDBRow>
@@ -57,9 +61,8 @@ function Home() {
           </MDBCard>
         </MDBCol>
       </MDBRow>
+      <Footer />
     </MDBContainer>
-    
-    
   );
 }
 
