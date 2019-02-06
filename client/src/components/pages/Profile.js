@@ -12,9 +12,16 @@ class Profile extends React.Component {
     userPhotoUrl: "",
     name: "",
     class: "",
+<<<<<<< HEAD
     lessons: "",
     users: [],
     isAdmin: ""
+||||||| merged common ancestors
+    lessons: ""
+=======
+    lessons: "",
+    isAdmin: false
+>>>>>>> origin
   };
 
   componentDidMount() {
@@ -31,9 +38,11 @@ class Profile extends React.Component {
           alert("Must sign in first!")
         }
         else if (res.data.isAdmin && !currentProfile) {
+          this.state.isAdmin = true
           profileNum = res.data.id
         }
         else if (res.data.isAdmin){
+          this.state.isAdmin = true
           profileNum = currentProfile
         }
         else {
@@ -109,9 +118,17 @@ class Profile extends React.Component {
               </MDBBtn>
             </Link>
             <Link to="/addLesson">
+<<<<<<< HEAD
               <MDBBtn className="peach-gradient">
                 Add Lesson
               </MDBBtn>
+||||||| merged common ancestors
+              <MDBBtn className="peach-gradient">
+                Add Lesson
+                </MDBBtn>
+=======
+            {this.state.isAdmin ?  <MDBBtn className="peach-gradient"> Add Lesson </MDBBtn>: null}
+>>>>>>> origin
             </Link>
           </div>
           <MDBContainer>
@@ -124,7 +141,7 @@ class Profile extends React.Component {
                   Class: {this.state.class}
                 </h3>
                 <h5>
-                  Lessons: {this.state.lessons}
+                  Lessons: {this.state.lessons}  
                 </h5>
               </MDBCol>
               {this.state.isAdmin ? (
