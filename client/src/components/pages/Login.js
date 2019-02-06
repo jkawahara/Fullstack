@@ -32,7 +32,7 @@ class Login extends Component {
           if (res.data){
             window.location.replace(res.data);
           }
-          this.setState({ user: res.data, email: "", password: "", fireRedirect: true });
+          this.setState({ user: res.data, email: "", password: "" });
         })
         .catch(err => {
           console.log(err);
