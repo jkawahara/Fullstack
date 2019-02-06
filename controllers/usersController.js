@@ -27,11 +27,16 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
+    console.log(req.body);
     db.User
-      .update(req.body, {
-        where: {
-          id: req.params.id
-        }
+      .update(
+        {
+          needMentor: req.body.needMentor
+        },
+        {
+          where: {
+            id: req.body.id
+          }
       })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
