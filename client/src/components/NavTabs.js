@@ -41,8 +41,8 @@ function NavTabs() {
                   <a className="dropdown-item" tabIndex="-1" href="/lessons/jquery/4">jQuery Lessons</a>
                   <ul className="dropdown-menu">
                     <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/4">Lesson 4 - Fridge Game</Link></li>
-                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/5">Lesson 2 - Calculator</Link></li>
-                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/6">Lesson 3 - Timeouts</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/5">Lesson 5 - Calculator</Link></li>
+                    <li className="dropdown-item"><Link tabIndex="-1" to="/lessons/jquery/6">Lesson 6 - Timeouts</Link></li>
                   </ul>
                 </li>
               </MDBDropdownItem>

@@ -109,10 +109,6 @@ class Profile extends React.Component {
         this.setState({
           needMentor: true
         })
-      })
-      this.setState({
-        needMentor: true
-      })
     })
       .catch(err => {
         console.log(err);
@@ -174,13 +170,6 @@ class Profile extends React.Component {
                         ))}
                       </ul>
                     ) : (
-                  {this.state.users.length ? (
-                    <ul>
-                      {this.state.users.map(user => (
-                        <li>{user.name}</li>
-                      ))}
-                    </ul>
-                  ) : (
                       <h3>No current requests for mentor</h3>
                     )}
                 </MDBCol>
@@ -195,16 +184,6 @@ class Profile extends React.Component {
                   )}
                 </MDBCol>
               )}
-                  <MDBCol>
-                    {!this.state.needMentor ? (
-                      <MDBBtn onClick={this.handleGetMentor} className="peachy">
-                        Click for a mentor!
-                    </MDBBtn>
-                    ) : (
-                        <h3>A mentor will be in contact soon</h3>
-                      )}
-                  </MDBCol>
-                )}
             </MDBRow>
           </MDBContainer>
         </MDBContainer>
