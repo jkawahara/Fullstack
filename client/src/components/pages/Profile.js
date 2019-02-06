@@ -61,7 +61,7 @@ class Profile extends React.Component {
                 let usersArray = [];
                 if (typeof res.data === 'object') {
                   for (let i = 0; i < res.data.Lessons.length; i++) {
-                    if (this.state.isAdmin) {
+                    if (this.state.isAdmin && !res.data.Lessons[i].original) {
                       lessonsArray.push(
                         <li>
                           <a target="_blank" rel="noopener noreferrer" href={res.data.Lessons[i].lessonUrl}>{res.data.Lessons[i].frontEndName}</a>
@@ -90,9 +90,9 @@ class Profile extends React.Component {
   // Deletes a lesson if it's not an original one
   handleDeleteSubmit = (id, event) => {
     console.log(id);
-    // API.deleteLesson(id)
-    //   .then(res => this.loadLessons())
-    //   .catch(err => console.log(err));
+    API.deleteLesson(id)
+      .then(res => this.loadLessons())
+      .catch(err => console.log(err));
   };  
 
   // Get users that need mentor
