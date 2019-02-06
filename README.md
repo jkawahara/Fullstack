@@ -1,4 +1,4 @@
-# [Fullstack](https://fullstack-network.herokuapp.com/)
+# Live Link to [Fullstack](https://fullstack-network.herokuapp.com/)
 ### 1. Why / Background
   * Fullstack is a web based application that enable users, affiliated with coding boot camps, to organize their curriculum, and increase networking engagement.
  ### 2. What / Objectives / User Stories
@@ -21,10 +21,13 @@
       * NavBar ![navbar.png](client/public/assets/readmelinks/navbar.png "navbar")
       * Sign up as a new user ![signup.png](client/public/assets/readmelinks/signup.png "signup")
       * Login ![login.png](client/public/assets/readmelinks/login.png "login")
-      * OAuth login ![oauthsignin.png](client/public/assets/readmelinks/oauthsignin.png "oauthsignin")
-      * Lessons page ![lessonspage.png](client/public/assets/readmelinks/lessonspage.png "lessonspage")
-      * Profile page TBD ![profilepage.png](client/public/assets/readmelinks/profilepage.png "profilepage")
-      * Charts TBD ![charts.png](client/public/assets/readmelinks/charts.png "charts")
+      <!-- * OAuth login ![oauthsignin.png](client/public/assets/readmelinks/oauthsignin.png "oauthsignin") -->
+      * Select lesson ![lessonselect.png](client/public/assets/readmelinks/lessonselect.png "lessonselect")
+      * Lessons page ![lessoncode.png](client/public/assets/readmelinks/lessoncode.png "lessoncode")
+      * Student Profile page ![profilestudent.png](client/public/assets/readmelinks/profilestudent.png "profilestudent")
+      * Admin Profile page ![profileadmin.png](client/public/assets/readmelinks/profileadmin.png "profileadmin")
+      * Add lesson ![addlesson.png](client/public/assets/readmelinks/addlesson.png "addlesson")
+      <!-- * Charts TBD ![charts.png](client/public/assets/readmelinks/charts.png "charts") -->
       * JSON Resources
         * Classes ![jsonclasses.png](client/public/assets/readmelinks/jsonclasses.png "jsonclasses")
         * Lessons ![jsonlessons.png](client/public/assets/readmelinks/jsonlessons.png "jsonlessons")
