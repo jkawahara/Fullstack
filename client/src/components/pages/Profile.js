@@ -29,11 +29,15 @@ class Profile extends React.Component {
           alert("Must sign in first!")
         }
         else if (res.data.isAdmin && !currentProfile) {
-          this.state.isAdmin = true
+          this.setState({
+            isAdmin: true
+          })
           profileNum = res.data.id
         }
         else if (res.data.isAdmin){
-          this.state.isAdmin = true
+          this.setState({
+            isAdmin: true
+          })
           profileNum = currentProfile
         }
         else {
@@ -47,7 +51,6 @@ class Profile extends React.Component {
           }).then(() => {
             axios.get("/profile/class/" + thisUserClass)
               .then(res => {
-                console.log(res.data)
                 let lessonsArray = [];
                 if (typeof res.data === 'object') {
                   for (let i = 0; i < res.data.Lessons.length; i++) {
