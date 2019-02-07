@@ -27,11 +27,12 @@
       * Admin Profile page ![profileadmin.png](client/public/assets/readmelinks/profileadmin.png "profileadmin")
       * Add lesson ![addlesson.png](client/public/assets/readmelinks/addlesson.png "addlesson")
       * Charts ![charts.png](client/public/assets/readmelinks/charts.png "charts")
+      * Data Flow ![dataflow.png](client/public/assets/readmelinks/dataflow.png "dataflow")
       * JSON Resources
         * Classes ![jsonclasses.png](client/public/assets/readmelinks/jsonclasses.png "jsonclasses")
         * Lessons ![jsonlessons.png](client/public/assets/readmelinks/jsonlessons.png "jsonlessons")
         * Users ![jsonusers.png](client/public/assets/readmelinks/jsonusers.png "jsonusers")
-  * Design Description ![architecture.png](client/public/assets/readmelinks/architecture.png "achitecture")
+  * Design Description ![architecture.png](client/public/assets/readmelinks/architecture.png "architecture")
     * Application Setup (server.js)
       * Configure Express web app framework listening on process.env.PORT for Heroku deployment or default to 3001 for localhost. Serve up static assets. Configure middleware including Morgan Logger and parse URL encoded (any type including nested objects, JSON). Setup Passport authentication. Setup routes. Sync Sequelize models.
       * Required modules: npm (express, express-session, morgan), /routes, /models, /config/passport
