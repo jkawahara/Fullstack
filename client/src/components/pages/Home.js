@@ -1,6 +1,6 @@
 import React from "react";
 // import Lesson from "./Lesson";
-import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBIcon } from "mdbreact";
 import ChartsPage from "../ChartsPage";
 import Footer from "../Footer";
 // import { img } from "./assets/images/dataFlow.png";
@@ -13,9 +13,9 @@ function Home() {
         <MDBCol md="4">
           <MDBContainer>
             {/* -------------- Details -------------- */}
-            <MDBCard color="red lighten-1" text="white" className="text-center">
+            <MDBCard color="peachy" text="white" className="text-center mt-40">
               <MDBCardBody>
-                
+                <MDBIcon icon="code" className="fa-7x"/>
               </MDBCardBody>
             </MDBCard>
             <hr />
@@ -31,6 +31,12 @@ function Home() {
                 </blockquote>
               </MDBCardBody>
             </MDBCard>
+            <hr />
+            <MDBCard color="bluey" text="white" className="text-center">
+              <MDBCardBody>
+                <MDBIcon icon="code" className="fa-7x"/>
+              </MDBCardBody>
+            </MDBCard>
           </MDBContainer>
         </MDBCol>
         {/* ----------- Home: Right Column ----------- */}
@@ -43,7 +49,7 @@ function Home() {
                 <br />
                 We've designed Fullstack with boot camps in mind. <br />
                 <br />
-                As students we've found that in many programs the lessons are often separated into segments which is understandable from an educational standpoint, but what about after you've learned the material? How many times have you've learned something too quickly and you need to go back and refer to your notes? We have, many- many times. So we built this application for you.
+                As students we've found that in many programs the lessons are often separated into segments which is understandable from an educational standpoint, but what about after you've learned the material? How many times have you learned something too quickly and you need to go back to refer to your notes? We have, many- many times. So we built this application for you.
               </p>
               <MDBRow>
                 <MDBCol md="8">

@@ -1,5 +1,5 @@
 // import { React, Component } from "react";
-import { MDBJumbotron, MDBNavbar, MDBNavbarBrand, MDBNavbarToggler, MDBNavbarNav, MDBCollapse, MDBNavItem, MDBNavLink, MDBFormInline, MDBBtn, MDBInput, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBIcon, MDBBadge, MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import { MDBBtn, MDBInput, MDBIcon, MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import React from "react";
 import Footer from "../Footer";
 
