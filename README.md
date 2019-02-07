@@ -67,6 +67,10 @@
     * View Setup (/client, /public, /src/index, App.js)
       * Configure React library for single page application leveraging the following reusable components:
         * /components
+          * ChartsPage
+          * Footer
+          * FormInput
+          * NavTabs
         * /pages
           * AddLesson
           * Chart
