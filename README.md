@@ -50,7 +50,7 @@
       * Export: db, Class, Lesson, User
     * Posts Model Setup (TBD)
       * Define Firebase Realtime version of Posts object
-    * Controller Setup (index.js, apiRoutes.js, /controllers)
+    * Controller Setup (index.js, apiRoutes.js, authRoutes.js /controllers)
       * Assign routing views <-> model <-> DB as HTTP methods <-> CRUD operations <-> SQL
         * POST <-> Create <-> INSERT
         * GET <-> Read <-> SELECT
@@ -66,11 +66,17 @@
       * Export: passport
     * View Setup (/client, /public, /src/index, App.js)
       * Configure React library for single page application leveraging the following reusable components:
-        * /components/NavTabs
+        * /components
         * /pages
+          * AddLesson
+          * Chart
+          * ChartReg
+          * Contact
           * Home
           * Lesson
           * Login
+          * Logout
+          * NoMatch
           * Profile
           * SignUp
   * Prerequisites for Development:
