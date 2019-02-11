@@ -1,4 +1,4 @@
-# Live Link to [Fullstack](https://fullstack-network.herokuapp.com/)
+# Live Link to [Fullstack](https://bcbc-fullstack.herokuapp.com/)
 ### 1. Why / Background
   * Fullstack is a web based application that enable users, affiliated with coding boot camps, to organize their curriculum, and increase networking engagement.
  ### 2. What / Objectives / User Stories
@@ -71,7 +71,7 @@
     * 64 bit operating system 
     * git version 2.18.0
     * Visual Studio Code Version 1.29.1
-    * [GitHub Project-3](https://github.com/OrionAbrams/Project-3)
+    * [GitHub Repo](https://github.com/jkawahara/Fullstack)
     * Chrome Version 70.0.3538.110 (Official Build) (64-bit)
   * **Built With:**
     * This app was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -128,7 +128,7 @@
   * **Running the tests:**
     * Unit testing was informally executed
   * **Deployment:**
-    * App deployed on [Heroku](https://fullstack-network.herokuapp.com/)
+    * App deployed on [Heroku](https://bcbc-fullstack.herokuapp.com/)
  ## Versioning
   * For the versions available, see the tags on this repository.
  ## Authors
