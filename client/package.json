@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "acorn": "^7.1.1",
     "axios": "^0.18.1",
     "lodash": "^4.17.15",
     "mdbreact": "^4.9.0",
