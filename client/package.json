@@ -9,6 +9,7 @@
     "lodash": "^4.17.19",
     "mdbreact": "^4.25.5",
     "minimist": "^1.2.5",
+    "node-fetch": "^2.6.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-iframe": "^1.8.0",
