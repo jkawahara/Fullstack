@@ -1,4 +1,4 @@
-# Live Link to [Fullstack](https://bcbc-fullstack.herokuapp.com/)
+# Live Link to Fullstack- no longer active
 ### 1. Why / Background
   * Fullstack is a web based application that enable users, affiliated with coding boot camps, to organize their curriculum, and increase networking engagement.
  ### 2. What / Objectives / User Stories
